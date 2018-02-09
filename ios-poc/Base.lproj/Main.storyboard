@@ -25,11 +25,21 @@
                                     <segue destination="sud-bx-u7p" kind="presentation" id="576-so-ijl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Y1-L5-VIb">
+                                <rect key="frame" x="75" y="58" width="225" height="30"/>
+                                <state key="normal" title="Drawing View And lasso Tool"/>
+                                <connections>
+                                    <segue destination="yrO-AA-rlK" kind="presentation" id="RKu-qb-YIS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3aE-nt-tVG"/>
+                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8yE-Lq-3z2"/>
+                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="top" secondItem="Gf6-hK-tEb" secondAttribute="bottom" constant="8" symbolic="YES" id="L5n-5V-rdz"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rv5-0f-SRw"/>
+                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="centerX" secondItem="Gf6-hK-tEb" secondAttribute="centerX" id="goT-30-u9D"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="lvC-gJ-aaW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,6 +48,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--Canvas View Controller-->
+        <scene sceneID="PTa-Ul-HPU">
+            <objects>
+                <viewController id="yrO-AA-rlK" customClass="CanvasViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lt-1U-zPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdi-6G-vm6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="DrawingView And Lasso" id="4ve-Oh-chF">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Lcu-Zx-fTh">
+                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="TW1-uu-0QF">
+                                                <rect key="frame" x="16" y="7" width="121" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="Pen" width="60"/>
+                                                    <segment title="Lasso" width="60"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <connections>
+                                                <action selector="modeSelected:" destination="yrO-AA-rlK" id="3tY-KD-f1y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="S2T-oH-sNa">
+                                            <connections>
+                                                <action selector="close:" destination="yrO-AA-rlK" id="eMH-Tn-78W"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mD7-VF-zVY" customClass="CanvasView" customModule="ios_poc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hdi-6G-vm6" firstAttribute="leading" secondItem="3lt-1U-zPd" secondAttribute="leading" id="IIf-Ph-Hzz"/>
+                            <constraint firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="VZZ-V2-cYR"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="VqS-VU-ggO"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="bWC-tu-Kbe"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Hdi-6G-vm6" secondAttribute="bottom" id="chH-b1-Dmc"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="gtF-3N-PJQ"/>
+                            <constraint firstItem="Hdi-6G-vm6" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="top" id="wB0-9m-Vfj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="mD7-VF-zVY" id="1Ni-1f-YlF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAp-F1-Z07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="681.40929535232385"/>
         </scene>
         <!--Nested Scroll View Controller-->
         <scene sceneID="hXa-p5-fFh">
@@ -74,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6m-Ev-TuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709.60000000000002" y="-5.8470764617691158"/>
+            <point key="canvasLocation" x="756" y="32"/>
         </scene>
     </scenes>
 </document>
