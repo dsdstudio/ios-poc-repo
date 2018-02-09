@@ -1,0 +1,12 @@
+* IOS개발시 필요한 기능들을 작게 만들어보고 컨셉검증(Proof of Concept)을 의도로 만든 Repository입니다. 
+
+** 01. UIScrollView에서 페이징을 쓰면서 줌이 가능한 구조를 만들어보기
+
+제약조건 
+
+- 2개의 손가락으로 Pinch, Panning Gesture가 일어날때 x축으로 움직이면서 scrollview의 bounds 안쪽일때는  Panning, 다음페이지가 있으면 Paging을 위한 panning 처리
+
+
+** 02. Drawing View + lasso tool implementation 
+
+- 간단한 드로잉이 가능한 뷰를 구현하고 그것을 선택할수 있는 lasso tool 을 만든다
