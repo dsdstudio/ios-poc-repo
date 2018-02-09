@@ -14,6 +14,9 @@
 		0DDB34A4202D24E700851A87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */; };
 		0DDB34AF202D24E700851A87 /* ios_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34AE202D24E700851A87 /* ios_pocTests.swift */; };
 		0DDB34BA202D24E700851A87 /* ios_pocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34B9202D24E700851A87 /* ios_pocUITests.swift */; };
+		0DDB34C8202D2A3000851A87 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */; };
+		0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */; };
+		0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */; };
 		227ABF127147F82B5A7EEA62 /* Pods_ios_pocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917004476C8EA41FF723B8B4 /* Pods_ios_pocUITests.framework */; };
 		651D262858CABE22209086C6 /* Pods_ios_pocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47116AD904952E8DED8D8565 /* Pods_ios_pocTests.framework */; };
 		B1C84015998B9BF3E470BCD5 /* Pods_ios_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E653D77AD1ABFD7D5EF4C2E /* Pods_ios_poc.framework */; };
@@ -50,6 +53,9 @@
 		0DDB34B5202D24E700851A87 /* ios-pocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-pocUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB34B9202D24E700851A87 /* ios_pocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_pocUITests.swift; sourceTree = "<group>"; };
 		0DDB34BB202D24E700851A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
 		0E653D77AD1ABFD7D5EF4C2E /* Pods_ios_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C93B4A5C99AD5FC60E97E10 /* Pods-ios-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-poc.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc.release.xcconfig"; sourceTree = "<group>"; };
 		44C34017D1E6D6B12B25375D /* Pods-ios-pocUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-pocUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-pocUITests/Pods-ios-pocUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,9 +123,12 @@
 				0DDB3499202D24E700851A87 /* AppDelegate.swift */,
 				0DDB349B202D24E700851A87 /* ViewController.swift */,
 				0DDB349D202D24E700851A87 /* Main.storyboard */,
+				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
+				0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */,
 				0DDB34A0202D24E700851A87 /* Assets.xcassets */,
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
+				0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -455,7 +464,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDB34C8202D2A3000851A87 /* CollectionViewController.swift in Sources */,
+				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0DDB349C202D24E700851A87 /* ViewController.swift in Sources */,
+				0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
