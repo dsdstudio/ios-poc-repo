@@ -8,43 +8,29 @@
 
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
+import PDFKit
 
-class CanvasView: UIView {
+class CanvasView: PDFPage {
     var strokeGestureRecognizer:StrokeCollectGestureRecognizer!
     var path:UIBezierPath?
     var currrentStroke:Stroke {
         return strokeGestureRecognizer.currentStroke!
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        path = UIBezierPath()
-        path?.lineWidth = 3
-        path?.lineCapStyle = .round
-        path?.lineJoinStyle = .round
-        strokeGestureRecognizer = StrokeCollectGestureRecognizer()
-        strokeGestureRecognizer.canvasView = self
+    override func draw(with box: PDFDisplayBox, to context: CGContext) {
+        super.draw(with: box, to: context)
         
-        addGestureRecognizer(strokeGestureRecognizer)
+        UIGraphicsPushContext(context)
+        context.saveGState()
         
-        layer.drawsAsynchronously = true
-    }
-    
-    func newPDFContext() {
-        UIGraphicsBeginPDFPageWithInfo(bounds, nil)
-        
-        UIGraphicsEndPDFContext()
-    }
-
-    override func draw(_ rect: CGRect) {
-        let context = UIGraphicsGetCurrentContext()!
-        context.setStrokeColor(UIColor.black.cgColor)
-        path?.stroke()
+        context.restoreGState()
+        UIGraphicsPopContext()
+        print("draw")
     }
 }
 
 class StrokeCollectGestureRecognizer:UIGestureRecognizer {
-    var canvasView:CanvasView!
+    var canvasView:UIView!
     var strokes:[Stroke] = []
     var currentStroke:Stroke? {
         return strokes.last
@@ -62,6 +48,12 @@ class StrokeCollectGestureRecognizer:UIGestureRecognizer {
             }
         }
         canvasView.setNeedsDisplay()
+    }
+    
+    func appendData(touch:UITouch, predicted:Bool = false) {
+        var updateRect = CGRect.null
+        let pointData = PointData(location: touch.preciseLocation(in: canvasView), isPredicted:predicted)
+        currentStroke?.points.append(pointData)
     }
     
     func commitPath() {

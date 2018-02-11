@@ -82,7 +82,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mD7-VF-zVY" customClass="CanvasView" customModule="ios_poc" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mD7-VF-zVY" customClass="PDFView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -100,7 +100,7 @@
                         <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
                     </view>
                     <connections>
-                        <outlet property="canvasView" destination="mD7-VF-zVY" id="1Ni-1f-YlF"/>
+                        <outlet property="pdfView" destination="mD7-VF-zVY" id="80n-D9-a5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAp-F1-Z07" userLabel="First Responder" sceneMemberID="firstResponder"/>
