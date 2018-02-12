@@ -19,13 +19,11 @@ class CanvasView: PDFPage {
     
     override func draw(with box: PDFDisplayBox, to context: CGContext) {
         super.draw(with: box, to: context)
-        
         UIGraphicsPushContext(context)
         context.saveGState()
         
         context.restoreGState()
         UIGraphicsPopContext()
-        print("draw")
     }
 }
 

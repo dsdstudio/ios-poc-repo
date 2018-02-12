@@ -11,6 +11,7 @@ import PDFKit
 
 class CanvasViewController: UIViewController {
     @IBOutlet weak var pdfView: PDFView!
+    @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true) {
             
@@ -21,6 +22,9 @@ class CanvasViewController: UIViewController {
         pdfView.autoScales = true
         pdfView.minScaleFactor = 1
         pdfView.maxScaleFactor = 2
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.displayDirection = .vertical
+        print(pdfView.subviews)
         setupPages()
     }
 
@@ -29,25 +33,26 @@ class CanvasViewController: UIViewController {
         document.delegate = self
         pdfView.document = document
         
-        // Page 생성 후 추가
-        let page = PDFPage()
-        document.insert(page, at: 0)
+        pdfThumbnailView.pdfView = pdfView
+        pdfThumbnailView.layoutMode = .horizontal
+        pdfThumbnailView.thumbnailSize = CGSize(width: 44, height: 50)
         
-        let annotation = PDFAnnotation(bounds: CGRect(origin:.zero, size:CGSize(width: 200, height: 40)),
-                                       forType: .ink,
+        for i in 0...10 {
+            addSamplePage(index: i, text: "Page \(i)")
+        }
+    }
+    
+    func addSamplePage(index:Int, text:String) {
+        let page = PDFPage()
+        pdfView.document?.insert(page, at: index)
+        let annotation = PDFAnnotation(bounds: CGRect(origin:.zero, size:CGSize(width: 200, height: 50)),
+                                       forType: .freeText,
                                        withProperties: nil)
-        annotation.color = .red
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x:0, y:0))
-        path.lineWidth = 3
-        path.lineCapStyle = .round
-        path.lineJoinStyle = .round
-        path.addLine(to: CGPoint(x:40, y:40))
-        annotation.add(path)
+        annotation.contents = text
+        annotation.color = UIColor.darkGray
+        annotation.alignment = .center
         
         page.addAnnotation(annotation)
-        pdfView.currentPage?.addAnnotation(annotation)
-
     }
     func writeFile() {
         var fileUrl = MemesUtil.documentDirectory()

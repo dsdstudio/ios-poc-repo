@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,20 +87,29 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-Lt-9Nc" customClass="PDFThumbnailView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="51"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="eyK-Lt-9Nc" secondAttribute="bottom" constant="-1" id="Em4-nd-Quy"/>
                             <constraint firstItem="Hdi-6G-vm6" firstAttribute="leading" secondItem="3lt-1U-zPd" secondAttribute="leading" id="IIf-Ph-Hzz"/>
                             <constraint firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="VZZ-V2-cYR"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="VqS-VU-ggO"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="bWC-tu-Kbe"/>
+                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="bottom" constant="-50" id="bav-RG-z9l"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Hdi-6G-vm6" secondAttribute="bottom" id="chH-b1-Dmc"/>
+                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="leading" secondItem="mD7-VF-zVY" secondAttribute="leading" id="dbc-2J-JXS"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="gtF-3N-PJQ"/>
+                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="trailing" secondItem="mD7-VF-zVY" secondAttribute="trailing" id="mIj-Xr-f9z"/>
                             <constraint firstItem="Hdi-6G-vm6" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="top" id="wB0-9m-Vfj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
                     </view>
                     <connections>
+                        <outlet property="pdfThumbnailView" destination="eyK-Lt-9Nc" id="ZmV-gs-egu"/>
                         <outlet property="pdfView" destination="mD7-VF-zVY" id="80n-D9-a5C"/>
                     </connections>
                 </viewController>
