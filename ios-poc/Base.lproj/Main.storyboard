@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,14 +32,24 @@
                                     <segue destination="yrO-AA-rlK" kind="presentation" id="RKu-qb-YIS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-da-S0f">
+                                <rect key="frame" x="94" y="96" width="187" height="30"/>
+                                <state key="normal" title="CGPDFDocument Sample"/>
+                                <connections>
+                                    <segue destination="XM3-ZW-64Y" kind="presentation" id="Fkm-0p-YkO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oZ0-da-S0f" firstAttribute="top" secondItem="7Y1-L5-VIb" secondAttribute="bottom" constant="8" symbolic="YES" id="0gC-1F-Efx"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3aE-nt-tVG"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8yE-Lq-3z2"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="top" secondItem="Gf6-hK-tEb" secondAttribute="bottom" constant="8" symbolic="YES" id="L5n-5V-rdz"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rv5-0f-SRw"/>
+                            <constraint firstItem="oZ0-da-S0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="cdV-O5-tYa"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="centerX" secondItem="Gf6-hK-tEb" secondAttribute="centerX" id="goT-30-u9D"/>
+                            <constraint firstItem="oZ0-da-S0f" firstAttribute="centerX" secondItem="7Y1-L5-VIb" secondAttribute="centerX" id="i4k-jm-94Q"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="lvC-gJ-aaW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,6 +58,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yZx-zX-QCR">
+            <objects>
+                <viewController id="XM3-ZW-64Y" customClass="CGPDFViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o7S-UJ-WLp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6tG-Xw-53A"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFw-W8-JUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="785"/>
         </scene>
         <!--Canvas View Controller-->
         <scene sceneID="PTa-Ul-HPU">
@@ -87,35 +111,35 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-Lt-9Nc" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="617" width="375" height="51"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaW-i4-vHq" customClass="PDFThumbnailView">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="eyK-Lt-9Nc" secondAttribute="bottom" constant="-1" id="Em4-nd-Quy"/>
+                            <constraint firstItem="Neo-Jf-WVs" firstAttribute="bottom" secondItem="eaW-i4-vHq" secondAttribute="bottom" id="61Z-W3-UQk"/>
                             <constraint firstItem="Hdi-6G-vm6" firstAttribute="leading" secondItem="3lt-1U-zPd" secondAttribute="leading" id="IIf-Ph-Hzz"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="bottom" constant="-40" id="KoO-kV-iTA"/>
                             <constraint firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="VZZ-V2-cYR"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="VqS-VU-ggO"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="bWC-tu-Kbe"/>
-                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="bottom" constant="-50" id="bav-RG-z9l"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Hdi-6G-vm6" secondAttribute="bottom" id="chH-b1-Dmc"/>
-                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="leading" secondItem="mD7-VF-zVY" secondAttribute="leading" id="dbc-2J-JXS"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="gtF-3N-PJQ"/>
-                            <constraint firstItem="eyK-Lt-9Nc" firstAttribute="trailing" secondItem="mD7-VF-zVY" secondAttribute="trailing" id="mIj-Xr-f9z"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="nez-hK-2KE"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="vzG-do-6W8"/>
                             <constraint firstItem="Hdi-6G-vm6" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="top" id="wB0-9m-Vfj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
                     </view>
                     <connections>
-                        <outlet property="pdfThumbnailView" destination="eyK-Lt-9Nc" id="ZmV-gs-egu"/>
+                        <outlet property="pdfThumbnailView" destination="eaW-i4-vHq" id="pXD-gY-Pmp"/>
                         <outlet property="pdfView" destination="mD7-VF-zVY" id="80n-D9-a5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAp-F1-Z07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="681.40929535232385"/>
+            <point key="canvasLocation" x="756" y="779"/>
         </scene>
         <!--Nested Scroll View Controller-->
         <scene sceneID="hXa-p5-fFh">

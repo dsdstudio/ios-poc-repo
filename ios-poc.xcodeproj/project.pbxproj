@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F2849203599F8000162C0 /* sample_pdf.pdf */; };
+		0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F284B20359A56000162C0 /* CGPDFViewController.swift */; };
 		0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB3499202D24E700851A87 /* AppDelegate.swift */; };
 		0DDB349C202D24E700851A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB349B202D24E700851A87 /* ViewController.swift */; };
 		0DDB349F202D24E700851A87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB349D202D24E700851A87 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3F2849203599F8000162C0 /* sample_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample_pdf.pdf; sourceTree = "<group>"; };
+		0D3F284B20359A56000162C0 /* CGPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPDFViewController.swift; sourceTree = "<group>"; };
 		0DDB3496202D24E700851A87 /* ios-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB3499202D24E700851A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DDB349B202D24E700851A87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +140,10 @@
 				0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */,
 				0DDB34A0202D24E700851A87 /* Assets.xcassets */,
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
+				0D3F2849203599F8000162C0 /* sample_pdf.pdf */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
 				0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */,
+				0D3F284B20359A56000162C0 /* CGPDFViewController.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			files = (
 				0DDB34A4202D24E700851A87 /* LaunchScreen.storyboard in Resources */,
 				0DDB34A1202D24E700851A87 /* Assets.xcassets in Resources */,
+				0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */,
 				0DDB349F202D24E700851A87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DDB34C8202D2A3000851A87 /* CollectionViewController.swift in Sources */,
+				0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */,
 				0DDB349C202D24E700851A87 /* ViewController.swift in Sources */,

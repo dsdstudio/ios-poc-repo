@@ -24,6 +24,7 @@ class CanvasView: PDFPage {
         
         context.restoreGState()
         UIGraphicsPopContext()
+        print("\(context.ctm) 드로우 함수 호출됨" )
     }
 }
 

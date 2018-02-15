@@ -17,26 +17,29 @@ class CanvasViewController: UIViewController {
             
         }
     }
+    
     override func viewDidLoad() {
         pdfView.backgroundColor = .darkGray
         pdfView.autoScales = true
         pdfView.minScaleFactor = 1
         pdfView.maxScaleFactor = 2
-        pdfView.displayMode = .singlePageContinuous
-        pdfView.displayDirection = .vertical
-        print(pdfView.subviews)
+        pdfView.displayMode = .singlePage
+        pdfView.displayDirection = .horizontal
         setupPages()
+        // 호출 순서에 영향을 받는다. document 가 세팅된 이후에 호출되어야함
+        pdfView.usePageViewController(true)
+        
+        pdfThumbnailView.pdfView = pdfView
+        pdfThumbnailView.layoutMode = .horizontal
+        pdfThumbnailView.backgroundColor = .orange
+        pdfThumbnailView.thumbnailSize = CGSize(width: 40, height: 40)
     }
 
     func setupPages() {
         let document = PDFDocument()
         document.delegate = self
         pdfView.document = document
-        
-        pdfThumbnailView.pdfView = pdfView
-        pdfThumbnailView.layoutMode = .horizontal
-        pdfThumbnailView.thumbnailSize = CGSize(width: 44, height: 50)
-        
+      
         for i in 0...10 {
             addSamplePage(index: i, text: "Page \(i)")
         }
@@ -44,16 +47,17 @@ class CanvasViewController: UIViewController {
     
     func addSamplePage(index:Int, text:String) {
         let page = PDFPage()
-        pdfView.document?.insert(page, at: index)
-        let annotation = PDFAnnotation(bounds: CGRect(origin:.zero, size:CGSize(width: 200, height: 50)),
+        let annotation = PDFAnnotation(bounds: CGRect(origin:CGPoint(x:50, y:50), size:CGSize(width: 200, height: 50)),
                                        forType: .freeText,
                                        withProperties: nil)
         annotation.contents = text
         annotation.color = UIColor.darkGray
         annotation.alignment = .center
         
+        pdfView.document?.insert(page, at: index)
         page.addAnnotation(annotation)
     }
+    
     func writeFile() {
         var fileUrl = MemesUtil.documentDirectory()
         fileUrl.appendPathComponent("t.pdf")
