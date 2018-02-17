@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F2849203599F8000162C0 /* sample_pdf.pdf */; };
 		0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F284B20359A56000162C0 /* CGPDFViewController.swift */; };
+		0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F28532038A5F9000162C0 /* PDFParser.swift */; };
 		0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB3499202D24E700851A87 /* AppDelegate.swift */; };
 		0DDB349C202D24E700851A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB349B202D24E700851A87 /* ViewController.swift */; };
 		0DDB349F202D24E700851A87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB349D202D24E700851A87 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		0DDB34A4202D24E700851A87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */; };
 		0DDB34AF202D24E700851A87 /* ios_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34AE202D24E700851A87 /* ios_pocTests.swift */; };
 		0DDB34BA202D24E700851A87 /* ios_pocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34B9202D24E700851A87 /* ios_pocUITests.swift */; };
-		0DDB34C8202D2A3000851A87 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */; };
 		0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */; };
 		0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */; };
 		0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34CE202D30EC00851A87 /* CanvasView.swift */; };
@@ -47,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0D3F2849203599F8000162C0 /* sample_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample_pdf.pdf; sourceTree = "<group>"; };
 		0D3F284B20359A56000162C0 /* CGPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPDFViewController.swift; sourceTree = "<group>"; };
+		0D3F28532038A5F9000162C0 /* PDFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFParser.swift; sourceTree = "<group>"; };
 		0DDB3496202D24E700851A87 /* ios-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB3499202D24E700851A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DDB349B202D24E700851A87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		0DDB34B5202D24E700851A87 /* ios-pocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-pocUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB34B9202D24E700851A87 /* ios_pocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_pocUITests.swift; sourceTree = "<group>"; };
 		0DDB34BB202D24E700851A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
 		0DDB34CE202D30EC00851A87 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0D3F2849203599F8000162C0 /* sample_pdf.pdf */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
-				0DDB34C7202D2A3000851A87 /* CollectionViewController.swift */,
 				0D3F284B20359A56000162C0 /* CGPDFViewController.swift */,
+				0D3F28532038A5F9000162C0 /* PDFParser.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -488,13 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDB34C8202D2A3000851A87 /* CollectionViewController.swift in Sources */,
 				0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */,
 				0DDB349C202D24E700851A87 /* ViewController.swift in Sources */,
 				0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */,
 				0DDB34D1202D31E300851A87 /* CanvasViewController.swift in Sources */,
+				0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
 				0DDB35152030772F00851A87 /* MemesUtil.swift in Sources */,
 			);

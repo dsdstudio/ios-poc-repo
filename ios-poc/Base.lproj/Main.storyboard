@@ -59,6 +59,21 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
+        <!--View Controler-->
+        <scene sceneID="bUM-cH-MD9">
+            <objects>
+                <viewController restorationIdentifier="PDFViewControler" storyboardIdentifier="PDFViewControler" id="0t8-Ji-tv0" customClass="PDFViewControler" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0BS-8s-IzP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eCS-FL-BHi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfu-ld-yRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-690" y="786"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="yZx-zX-QCR">
             <objects>
