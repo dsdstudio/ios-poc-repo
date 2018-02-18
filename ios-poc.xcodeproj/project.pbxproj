@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F2849203599F8000162C0 /* sample_pdf.pdf */; };
-		0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F284B20359A56000162C0 /* CGPDFViewController.swift */; };
+		0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */; };
 		0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F28532038A5F9000162C0 /* PDFParser.swift */; };
+		0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F285620399A29000162C0 /* MemesPdfView.swift */; };
+		0D3F285920399CFA000162C0 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */; };
 		0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB3499202D24E700851A87 /* AppDelegate.swift */; };
 		0DDB349C202D24E700851A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB349B202D24E700851A87 /* ViewController.swift */; };
 		0DDB349F202D24E700851A87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB349D202D24E700851A87 /* Main.storyboard */; };
@@ -46,8 +48,10 @@
 
 /* Begin PBXFileReference section */
 		0D3F2849203599F8000162C0 /* sample_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample_pdf.pdf; sourceTree = "<group>"; };
-		0D3F284B20359A56000162C0 /* CGPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPDFViewController.swift; sourceTree = "<group>"; };
+		0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPDFPageViewController.swift; sourceTree = "<group>"; };
 		0D3F28532038A5F9000162C0 /* PDFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFParser.swift; sourceTree = "<group>"; };
+		0D3F285620399A29000162C0 /* MemesPdfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesPdfView.swift; sourceTree = "<group>"; };
+		0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
 		0DDB3496202D24E700851A87 /* ios-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB3499202D24E700851A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DDB349B202D24E700851A87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3F285520399A0B000162C0 /* hybridDraw */ = {
+			isa = PBXGroup;
+			children = (
+				0D3F285620399A29000162C0 /* MemesPdfView.swift */,
+			);
+			path = hybridDraw;
+			sourceTree = "<group>";
+		};
 		0DDB348D202D24E700851A87 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,7 @@
 		0DDB3498202D24E700851A87 /* ios-poc */ = {
 			isa = PBXGroup;
 			children = (
+				0D3F285520399A0B000162C0 /* hybridDraw */,
 				0DDB35142030772F00851A87 /* MemesUtil.swift */,
 				0DDB34CD202D30DD00851A87 /* Drawing */,
 				0DDB3499202D24E700851A87 /* AppDelegate.swift */,
@@ -142,8 +155,9 @@
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0D3F2849203599F8000162C0 /* sample_pdf.pdf */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
-				0D3F284B20359A56000162C0 /* CGPDFViewController.swift */,
 				0D3F28532038A5F9000162C0 /* PDFParser.swift */,
+				0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */,
+				0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -488,13 +502,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D3F284C20359A56000162C0 /* CGPDFViewController.swift in Sources */,
+				0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */,
+				0D3F285920399CFA000162C0 /* PDFKitBasedViewController.swift in Sources */,
 				0DDB349C202D24E700851A87 /* ViewController.swift in Sources */,
 				0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */,
 				0DDB34D1202D31E300851A87 /* CanvasViewController.swift in Sources */,
 				0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */,
+				0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
 				0DDB35152030772F00851A87 /* MemesUtil.swift in Sources */,
 			);

@@ -19,7 +19,7 @@ class PDFParser {
     
     static var FNMAP:[PDFOperationType:CGPDFOperatorCallback] = [
         // TODO Graphics States Changes
-        
+
         // Text Operations
         PDFOperationType.text: { parse($0, PDFOperationType.text, $1) },
         PDFOperationType.newLineText: { parse($0, PDFOperationType.newLineText, $1) },

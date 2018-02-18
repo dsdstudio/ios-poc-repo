@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CGPDFViewController: UIViewController  {
+import PDFKit
+
+class CGPDFPageViewController: UIViewController  {
     var currentIndex:Int = 0
     var pageController:UIPageViewController?
     var doc:CGPDFDocument?
@@ -16,6 +18,10 @@ class CGPDFViewController: UIViewController  {
         pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         pageController?.delegate = self
         pageController?.dataSource = self
+        CGPDFDocumentBasedInit()
+    }
+    
+    func CGPDFDocumentBasedInit() {
         if let pdfUrl:URL = Bundle.main.url(forResource: "sample_pdf", withExtension: ".pdf") {
             let doc:CGPDFDocument! = CGPDFDocument(pdfUrl as CFURL)
             self.doc = doc
@@ -31,28 +37,24 @@ class CGPDFViewController: UIViewController  {
         }
     }
     
-    func viewController(at index:Int) -> PDFViewControler? {
+    func viewController(at index:Int) -> CGPDFViewControler? {
         if doc?.numberOfPages == 0 || (doc?.numberOfPages)! <= index {
             return nil
         }
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PDFViewControler") as! PDFViewControler
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CGPDFViewController") as! CGPDFViewControler
         vc.pdf = doc
         vc.pageNumber = index + 1
         return vc
     }
     
-    func indexOfViewController(_ vc:PDFViewControler) -> Int{
+    func indexOfViewController(_ vc:CGPDFViewControler) -> Int{
         return vc.pageNumber - 1
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
-extension CGPDFViewController:UIPageViewControllerDataSource {
+extension CGPDFPageViewController:UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! PDFViewControler)
+        var index = self.indexOfViewController(viewController as! CGPDFViewControler)
         if index == 0 || index == NSNotFound {
             return nil
         }
@@ -62,7 +64,7 @@ extension CGPDFViewController:UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! PDFViewControler)
+        var index = self.indexOfViewController(viewController as! CGPDFViewControler)
         if index == NSNotFound {
             return nil
         }
@@ -77,11 +79,11 @@ extension CGPDFViewController:UIPageViewControllerDataSource {
     }
 }
 
-extension CGPDFViewController:UIPageViewControllerDelegate {
+extension CGPDFPageViewController:UIPageViewControllerDelegate {
     
 }
 
-class PDFViewControler: UIViewController {
+class CGPDFViewControler: UIViewController {
     var pdf:CGPDFDocument!
     var pageNumber:Int = 0
     override func viewDidLoad() {
@@ -92,6 +94,8 @@ class PDFViewControler: UIViewController {
         let scale:CGFloat = v.bounds.width / (rect?.width)!
         v.pdfScale = scale
         self.view.addSubview(v)
+        PDFParser.scanPDF(page: v.page!)
+        PDFParser.parseAnnotations(pageDictionary: (v.page?.dictionary)!)
     }
 }
 
@@ -143,7 +147,6 @@ class SamplePDFView :UIView {
                 for pageIndex in 1...pdfDocument.numberOfPages {
                     let page = pdfDocument.page(at:pageIndex)
                     let pageDictionary:CGPDFDictionaryRef = (page?.dictionary!)!
-                    let pageDictionaryCount = CGPDFDictionaryGetCount(pageDictionary)
                     PDFParser.scanPDF(page: page!)
                     PDFParser.parseAnnotations(pageDictionary: pageDictionary)
                 }

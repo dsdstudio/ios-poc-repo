@@ -28,11 +28,6 @@ class CanvasViewController: UIViewController {
         setupPages()
         // 호출 순서에 영향을 받는다. document 가 세팅된 이후에 호출되어야함
         pdfView.usePageViewController(true)
-        
-        pdfThumbnailView.pdfView = pdfView
-        pdfThumbnailView.layoutMode = .horizontal
-        pdfThumbnailView.backgroundColor = .orange
-        pdfThumbnailView.thumbnailSize = CGSize(width: 40, height: 40)
     }
 
     func setupPages() {
