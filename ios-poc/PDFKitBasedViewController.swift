@@ -10,26 +10,61 @@ import UIKit
 import PDFKit
 
 class PDFKitBasedPageViewController: UIViewController {
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     var pageController:UIPageViewController!
     var doc:PDFDocument? = nil
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        
+    }
+    
+    static func randomRect(size:CGSize) -> CGRect {
+        let randomSize = CGSize(width:CGFloat(arc4random_uniform(UInt32(size.width))), height:CGFloat(arc4random_uniform(UInt32(size.height))))
+        let randomPoint = CGPoint(x:CGFloat(arc4random_uniform(UInt32(size.width))), y:CGFloat(arc4random_uniform(UInt32(size.height))))
+        return CGRect(origin:randomPoint, size:randomSize)
+    }
+    
+    let randomAnnotationStrategies = [
+        { (bounds:CGRect) -> PDFAnnotation in
+            let a = PDFAnnotation(bounds: randomRect(size: bounds.size), forType: .circle, withProperties: nil)
+            a.border = PDFBorder()
+            a.border?.lineWidth = CGFloat(arc4random_uniform(5))
+            a.color = .orange
+            return a
+            
+        }
+    ]
+    @IBAction func addRandomAnnotations(_ sender: Any) {
+        let vc = pageController.viewControllers![0] as! PDFKitViewController
+        let a = randomAnnotationStrategies[0](vc.editablePdfView.bounds)
+        vc.editablePdfView.page?.addAnnotation(a)
+        vc.editablePdfView.setNeedsDisplay()
+        print("added random Annotation", a)
+    }
+    @IBAction func toggle(_ sender: Any) {
+        if pageController.dataSource == nil {
+            pageController.dataSource = self
+            toggleButton.setTitle("스크롤 락 설정", for: .normal)
+        } else {
+            pageController.dataSource = nil
+            toggleButton.setTitle("스크롤 락 해제", for: .normal)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         pageController.delegate = self
         pageController.dataSource = self
 
-        if let pdfUrl:URL = Bundle.main.url(forResource: "sample_pdf", withExtension: ".pdf") {
+        if let pdfUrl:URL = Bundle.main.url(forResource: "t0", withExtension: ".pdf") {
             self.doc = PDFDocument(url: pdfUrl)
             self.doc?.delegate = self
             let firstController = self.viewController(at: 0)!
             let controllers = [firstController]
             pageController?.setViewControllers(controllers, direction: .forward, animated: false, completion: nil)
             self.addChildViewController(self.pageController!)
-            self.view.addSubview((pageController?.view)!)
+            self.view.insertSubview((pageController?.view)!, belowSubview: self.toggleButton)
             
             self.pageController?.view.frame = self.view.bounds
             pageController?.didMove(toParentViewController: self)
@@ -94,14 +129,18 @@ class PDFKitViewController:UIViewController {
             print("didload => \(pageNumber)", pdf.pageCount)
             editablePdfView.setPage(page: pdf.page(at: pageNumber)!, width:self.view.frame.size.width)
         }
+        scrollView.isScrollEnabled  = false
     }
-    
+}
+extension PDFKitViewController:UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
 extension PDFKitViewController:UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
          return self.editablePdfView
     }
-    
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         print("didEndZooming ", scale)
