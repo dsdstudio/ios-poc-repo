@@ -11,6 +11,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Lasso View Controller-->
+        <scene sceneID="2Yh-wU-mFl">
+            <objects>
+                <viewController id="Xdb-1f-En7" customClass="LassoViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wWz-l4-qCP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WcV-Le-lWK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADS-N5-LhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-813" y="83"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -47,6 +62,13 @@
                                     <segue destination="qm1-LQ-RYl" kind="presentation" id="9D4-wB-5en"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49P-eB-PqI">
+                                <rect key="frame" x="109" y="172" width="157" height="30"/>
+                                <state key="normal" title="Lasso Tool Prototyping"/>
+                                <connections>
+                                    <segue destination="Xdb-1f-En7" kind="presentation" id="Icm-al-XNd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -54,8 +76,10 @@
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="trailing" secondItem="oZ0-da-S0f" secondAttribute="trailing" id="26Z-cR-mns"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3aE-nt-tVG"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8yE-Lq-3z2"/>
+                            <constraint firstItem="49P-eB-PqI" firstAttribute="top" secondItem="ZGX-ai-IJO" secondAttribute="bottom" constant="8" symbolic="YES" id="Cuc-oW-LFS"/>
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="leading" secondItem="oZ0-da-S0f" secondAttribute="leading" id="GSv-CK-34Q"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="top" secondItem="Gf6-hK-tEb" secondAttribute="bottom" constant="8" symbolic="YES" id="L5n-5V-rdz"/>
+                            <constraint firstItem="49P-eB-PqI" firstAttribute="centerX" secondItem="ZGX-ai-IJO" secondAttribute="centerX" id="R6L-RO-ajw"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rv5-0f-SRw"/>
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="top" secondItem="oZ0-da-S0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Tjl-Oh-WPM"/>
                             <constraint firstItem="oZ0-da-S0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="cdV-O5-tYa"/>

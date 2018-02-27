@@ -88,6 +88,8 @@ class PDFAnnotationPanGestureRecognizer:UIPanGestureRecognizer {
             .scaledBy(x: 1, y: -1)
             .scaledBy(x: (pdfView?.pdfScale)!, y: (pdfView?.pdfScale)!)
         
+        let scale = 1 / (pdfView?.pdfScale)!
+        print(pdfView?.page?.annotation(at: location!.applying(transform.scaledBy(x: scale, y: scale))))
         let selectedAnnotation = rectBasedHitTest(transform: transform, location: location!)
         if let annotation = selectedAnnotation {
             print("annotation selected ", annotation)
@@ -108,17 +110,17 @@ class PDFAnnotationPanGestureRecognizer:UIPanGestureRecognizer {
         }
         
         if let bounds = selectedAnnotation?.bounds,
-            let p = touches.first?.location(in: pdfView),
+            let location = touches.first?.location(in: pdfView),
             let previousLocation = self.previousLocation {
             
             let computedScale = 1 / (pdfView?.pdfScale)!
             let restoredTransform = CGAffineTransform(scaleX: computedScale, y: computedScale)
-            let dp = CGPoint(x:p.x - previousLocation.x, y: p.y - previousLocation.y)
+            let dp = CGPoint(x:location.x - previousLocation.x, y: location.y - previousLocation.y)
                 .applying(restoredTransform)
             print(dp)
             selectedAnnotation?.bounds = CGRect(origin:CGPoint(x:bounds.origin.x + dp.x, y:bounds.origin.y - dp.y), size:bounds.size)
             pdfView?.setNeedsDisplay()
-            self.previousLocation = p
+            self.previousLocation = location
             state = .changed
         }
     }

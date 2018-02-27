@@ -28,20 +28,20 @@ class PDFKitBasedPageViewController: UIViewController {
     
     let randomAnnotationStrategies = [
         { (bounds:CGRect) -> PDFAnnotation in
-            let a = PDFAnnotation(bounds: randomRect(size: bounds.size), forType: .circle, withProperties: nil)
-            a.border = PDFBorder()
-            a.border?.lineWidth = CGFloat(arc4random_uniform(5))
-            a.color = .orange
-            return a
-            
+            let annotation = PDFAnnotation(bounds: randomRect(size: bounds.size), forType: .circle, withProperties: nil)
+            annotation.border = PDFBorder()
+            annotation.border?.lineWidth = CGFloat(arc4random_uniform(5))
+            annotation.color = .orange
+            return annotation
         }
     ]
+    
     @IBAction func addRandomAnnotations(_ sender: Any) {
         let vc = pageController.viewControllers![0] as! PDFKitViewController
-        let a = randomAnnotationStrategies[0](vc.editablePdfView.bounds)
-        vc.editablePdfView.page?.addAnnotation(a)
+        let annotation = randomAnnotationStrategies[0](vc.editablePdfView.bounds)
+        vc.editablePdfView.page?.addAnnotation(annotation)
         vc.editablePdfView.setNeedsDisplay()
-        print("added random Annotation", a)
+        print("added random Annotation", annotation)
     }
     @IBAction func toggle(_ sender: Any) {
         if pageController.dataSource == nil {
@@ -57,7 +57,7 @@ class PDFKitBasedPageViewController: UIViewController {
         pageController.delegate = self
         pageController.dataSource = self
 
-        if let pdfUrl:URL = Bundle.main.url(forResource: "t0", withExtension: ".pdf") {
+        if let pdfUrl:URL = Bundle.main.url(forResource: "sample_pdf", withExtension: ".pdf") {
             self.doc = PDFDocument(url: pdfUrl)
             self.doc?.delegate = self
             let firstController = self.viewController(at: 0)!
@@ -89,7 +89,11 @@ class PDFKitBasedPageViewController: UIViewController {
 extension PDFKitBasedPageViewController: PDFDocumentDelegate {
     // TODO PDFDocumentDelegate
 }
+
 extension PDFKitBasedPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        print("didfinish animating", completed)
+    }
 }
 
 extension PDFKitBasedPageViewController: UIPageViewControllerDataSource {
@@ -132,11 +136,13 @@ class PDFKitViewController:UIViewController {
         scrollView.isScrollEnabled  = false
     }
 }
+
 extension PDFKitViewController:UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
+
 extension PDFKitViewController:UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
          return self.editablePdfView
