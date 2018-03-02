@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D069A202048DA2000E1C8CE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D069A1F2048DA2000E1C8CE /* Extensions.swift */; };
 		0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F2849203599F8000162C0 /* sample_pdf.pdf */; };
 		0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */; };
 		0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F28532038A5F9000162C0 /* PDFParser.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D069A1F2048DA2000E1C8CE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0D3F2849203599F8000162C0 /* sample_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample_pdf.pdf; sourceTree = "<group>"; };
 		0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPDFPageViewController.swift; sourceTree = "<group>"; };
 		0D3F28532038A5F9000162C0 /* PDFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFParser.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */,
 				0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */,
 				0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */,
+				0D069A1F2048DA2000E1C8CE /* Extensions.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */,
 				0DDB34D1202D31E300851A87 /* CanvasViewController.swift in Sources */,
 				0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */,
+				0D069A202048DA2000E1C8CE /* Extensions.swift in Sources */,
 				0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */,
 				0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,

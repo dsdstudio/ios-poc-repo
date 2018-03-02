@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIKit.UIGestureRecognizerSubclass
 
 class LassoViewController: UIViewController {
     let segmentedControl:UISegmentedControl = {
@@ -17,6 +18,7 @@ class LassoViewController: UIViewController {
         return v
     }()
     var lassoView:LassoView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -31,33 +33,56 @@ class LassoViewController: UIViewController {
     }
     
     @objc func changed(_ sender:UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
-        lassoView.drawingMode = DrawingMode(rawValue: sender.selectedSegmentIndex)!
+        lassoView.drawingMode = PenDrawingConfig.DrawingMode(rawValue: sender.selectedSegmentIndex)!
     }
-}
-enum DrawingMode:Int {
-    case Pen = 0
-    case Lasso = 1
 }
 
-class LassoView:UIView {
-    var lassoPath:UIBezierPath? = nil
-    var activePath:UIBezierPath? = nil
+class PenDrawingConfig {
+    enum DrawingMode:Int {
+        case Pen = 0
+        case Lasso = 1
+    }
+}
+
+class PathCollectGestureRecognizer:UIGestureRecognizer {
+    var lassoView:LassoView?
+    
+    override init(target: Any?, action: Selector?) {
+        super.init(target: target, action: action)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        let touchLocation = (touches.first?.location(in: view))!
+        lassoView?.activePath = UIBezierPath()
+        lassoView?.activePath?.lineWidth = 3
+        lassoView?.activePath?.move(to: touchLocation)
+        state = .began
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+        let touchLocation = (touches.first?.location(in: view))!
+        lassoView?.activePath?.addLine(to: touchLocation)
+        lassoView?.setNeedsDisplay()
+        state = .changed
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+        let l = CAShapeLayer()
+        l.lineWidth = 3
+        l.strokeColor = UIColor.black.cgColor
+        l.fillColor = UIColor.clear.cgColor
+        l.path = lassoView?.activePath?.cgPath
+        lassoView?.layer.addSublayer(l)
+        state = .ended
+    }
+}
+
+class LassoToolGestureRecognizer:UIGestureRecognizer {
+    var lassoView:LassoView?
     var selectedShapes = [CAShapeLayer]()
-    var drawingMode:DrawingMode = .Pen
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layer.drawsAsynchronously = true
-        isUserInteractionEnabled = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func random(_ min:Int, _ max:Int) -> CGFloat {
-        return CGFloat(min) + CGFloat(arc4random_uniform(UInt32(max - min + 1)))
+    var selected:Bool {
+        get {
+            return selectedShapes.count > 0
+        }
     }
     
     func clearShadow(_ shape:CAShapeLayer) {
@@ -69,8 +94,8 @@ class LassoView:UIView {
     
     func applyShadow(_ shape:CAShapeLayer) {
         shape.shadowColor = UIColor.darkGray.cgColor
-        shape.shadowRadius = 8.0
-        shape.shadowOpacity = 0.9
+        shape.shadowRadius = 4.0
+        shape.shadowOpacity = 1
         shape.shadowOffset = .zero
     }
     
@@ -96,72 +121,148 @@ class LassoView:UIView {
         return arr
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touchLocation = (touches.first?.location(in: self))!
-        switch drawingMode {
-        case .Pen:
-            activePath = UIBezierPath()
-            activePath?.lineWidth = 3
-            activePath?.move(to: touchLocation)
-        case .Lasso:
-            if let layers = layer.sublayers {
-                layers.forEach({ clearShadow($0 as! CAShapeLayer) })
+    func newLassoPath () -> UIBezierPath {
+        let lassoPath = UIBezierPath()
+        lassoPath.lineWidth = 3
+        lassoPath.lineCapStyle = .round
+        lassoPath.lineJoinStyle = .round
+        let dashes:[CGFloat] = [0.0, 8.0]
+        lassoPath.setLineDash(dashes, count: dashes.count, phase: 0)
+        return lassoPath
+    }
+    
+    var previousPoint:CGPoint = .zero
+    var dragMode = false
+    var lassoLayer:LassoLayer? = nil
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        let touchLocation = (touches.first?.location(in: view))!
+        state = .began
+        if let l = lassoLayer {
+            if (l.path?.contains(touchLocation))! && selected {
+                print("선택된게 있넹", selectedShapes.count)
+                previousPoint = touchLocation
+                dragMode = true
+                return
             }
-            lassoPath = UIBezierPath()
-            lassoPath?.lineWidth = 3
-            lassoPath?.lineCapStyle = .round
-            lassoPath?.lineJoinStyle = .round
-            let dashes:[CGFloat] = [0.0, 8.0]
-            lassoPath?.setLineDash(dashes, count: dashes.count, phase: 0)
-            lassoPath?.move(to: touchLocation)
+            l.removeFromSuperlayer()
         }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touchLocation = (touches.first?.location(in: self))!
-        switch drawingMode {
-        case .Pen:
-            activePath?.addLine(to: touchLocation)
-        case .Lasso:
-            lassoPath?.addLine(to: touchLocation)
+        if let layers = lassoView?.layer.sublayers {
+            layers.forEach({ clearShadow($0 as! CAShapeLayer) })
         }
-        setNeedsDisplay()
+        selectedShapes.removeAll()
+        lassoView?.lassoPath = newLassoPath()
+        lassoView?.lassoPath?.move(to: touchLocation)
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        switch drawingMode {
-        case .Pen:
-            let l = CAShapeLayer()
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+        let touchLocation = (touches.first?.location(in: view))!
+        if dragMode {
+            let delta = CGVector(dx: touchLocation.x - previousPoint.x, dy: touchLocation.y - previousPoint.y)
+            CALayer.disableAnimation {
+                self.lassoLayer?.position = CGPoint(x: (self.lassoLayer?.position.x)! + delta.dx, y: (self.lassoLayer?.position.y)! + delta.dy)
+            }
+            for s in self.selectedShapes {
+                CALayer.disableAnimation {
+                    s.position = CGPoint(x: s.position.x + delta.dx, y: s.position.y + delta.dy)
+                }
+            }
+            previousPoint = touchLocation
+        } else {
+            lassoView?.lassoPath?.addLine(to: touchLocation)
+            lassoView?.setNeedsDisplay()
+        }
+        state = .changed
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+        if dragMode {
+            dragMode = false
+            previousPoint = .zero
+            // 포지션을 기준으로 해서 좌표계를 변경한다.
+            for s in selectedShapes {
+                var t = CGAffineTransform(translationX: s.position.x, y: s.position.y)
+                let p = s.path?.copy(using: &t)
+                s.path = p
+                CALayer.disableAnimation {
+                    s.position = .zero
+                }
+            }
+        } else {
+            lassoView?.lassoPath?.close()
+            let l = LassoLayer()
+            l.path = lassoView?.lassoPath?.cgPath.copy()
             l.lineWidth = 3
-            l.strokeColor = UIColor.black.cgColor
-            l.fillColor = UIColor.clear.cgColor
-            l.path = activePath?.cgPath
-            layer.addSublayer(l)
-        case .Lasso:
-            if layer.sublayers != nil {
-                for shape in layer.sublayers!
-                    .map({$0 as! CAShapeLayer})
-                    .filter({ (lassoPath?.bounds.intersects(($0.path?.boundingBox)!))! }) {
-                    if let shapePath = shape.path {
-                        let arr = extractPoints(shapePath)
-                        let containsPoint = arr.filter({ (lassoPath?.contains($0))! }).first
-                        if containsPoint != nil {
-                            print("매칭됐네.. ", shape)
-                            applyShadow(shape)
-                            selectedShapes.append(shape)
-                        }
+            l.lineJoin = kCALineJoinRound
+            l.lineCap = kCALineCapRound
+            l.lineDashPattern = [0.0, 8.0]
+            l.strokeColor = UIColor.blue.cgColor
+            l.fillColor = UIColor(red: 29 / 255, green: 18/255, blue: 22/255, alpha: 0.1).cgColor
+            lassoView?.layer.addSublayer(l)
+            lassoLayer = l
+            if let layers = lassoView?.layer.sublayers, let path = lassoView?.lassoPath {
+                for shape in layers.filter({$0 is CAShapeLayer && !($0 is LassoLayer)}).map({$0 as! CAShapeLayer}).filter({ path.bounds.intersects(($0.path?.boundingBoxOfPath)!) }) {
+                    let containsPoint = extractPoints(shape.path!).first(where: { (path.contains($0)) })
+                    if containsPoint != nil {
+                        applyShadow(shape)
+                        selectedShapes.append(shape)
                     }
                 }
             }
+            lassoView?.lassoPath = nil
+            lassoView?.setNeedsDisplay()
         }
-        setNeedsDisplay()
+        state = .ended
+    }
+}
+
+class LassoLayer:CAShapeLayer {
+    
+}
+
+class LassoView:UIView {
+    var lassoPath:UIBezierPath? = UIBezierPath()
+    var activePath:UIBezierPath? = nil
+    var drawingMode:PenDrawingConfig.DrawingMode = .Pen {
+        didSet (value) {
+            switch drawingMode {
+            case .Lasso:
+                pathGesture?.isEnabled = false
+                lassoGesture?.isEnabled = true
+            case .Pen:
+                pathGesture?.isEnabled = true
+                lassoGesture?.isEnabled = false
+            }
+        }
+    }
+    var lassoGesture:LassoToolGestureRecognizer?
+    var pathGesture:PathCollectGestureRecognizer?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.drawsAsynchronously = true
+        isUserInteractionEnabled = true
+        lassoGesture = LassoToolGestureRecognizer(target: self, action: nil)
+        lassoGesture?.lassoView = self
+        lassoGesture?.isEnabled = false
+        addGestureRecognizer(lassoGesture!)
+        
+        pathGesture = PathCollectGestureRecognizer(target: self, action: nil)
+        pathGesture?.lassoView = self
+        addGestureRecognizer(pathGesture!)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func random(_ min:Int, _ max:Int) -> CGFloat {
+        return CGFloat(min) + CGFloat(arc4random_uniform(UInt32(max - min + 1)))
     }
     
     override func draw(_ rect: CGRect) {
         let c = UIGraphicsGetCurrentContext()!
         if drawingMode == .Lasso {
             c.setStrokeColor(UIColor.blue.cgColor)
-            c.setFillColor(UIColor(red: 0, green: 0, blue: 1, alpha: 0.2).cgColor)
+            c.setFillColor(UIColor(red: 29 / 255, green: 18/255, blue: 22/255, alpha: 0.1).cgColor)
             lassoPath?.stroke()
             lassoPath?.fill()
         }
@@ -171,7 +272,4 @@ class LassoView:UIView {
             activePath?.stroke()
         }
     }
-}
-
-extension CGPoint {
 }
