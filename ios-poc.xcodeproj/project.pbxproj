@@ -13,6 +13,8 @@
 		0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F28532038A5F9000162C0 /* PDFParser.swift */; };
 		0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F285620399A29000162C0 /* MemesPdfView.swift */; };
 		0D3F285920399CFA000162C0 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */; };
+		0DBFD367205F4D0E009EF037 /* DraggableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */; };
+		0DBFD36B205F4FBF009EF037 /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */; };
 		0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */; };
 		0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB3499202D24E700851A87 /* AppDelegate.swift */; };
 		0DDB349C202D24E700851A87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB349B202D24E700851A87 /* ViewController.swift */; };
@@ -55,6 +57,8 @@
 		0D3F28532038A5F9000162C0 /* PDFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFParser.swift; sourceTree = "<group>"; };
 		0D3F285620399A29000162C0 /* MemesPdfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesPdfView.swift; sourceTree = "<group>"; };
 		0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
+		0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCollectionViewController.swift; sourceTree = "<group>"; };
+		0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCell.swift; sourceTree = "<group>"; };
 		0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LassoViewController.swift; sourceTree = "<group>"; };
 		0DDB3496202D24E700851A87 /* ios-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDB3499202D24E700851A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,11 +156,11 @@
 				0DDB3499202D24E700851A87 /* AppDelegate.swift */,
 				0DDB349B202D24E700851A87 /* ViewController.swift */,
 				0DDB349D202D24E700851A87 /* Main.storyboard */,
+				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
 				0DDB34D0202D31E300851A87 /* CanvasViewController.swift */,
 				0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */,
 				0DDB34A0202D24E700851A87 /* Assets.xcassets */,
-				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0D3F2849203599F8000162C0 /* sample_pdf.pdf */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
 				0D3F28532038A5F9000162C0 /* PDFParser.swift */,
@@ -164,6 +168,8 @@
 				0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */,
 				0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */,
 				0D069A1F2048DA2000E1C8CE /* Extensions.swift */,
+				0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */,
+				0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */,
 			);
 			path = "ios-poc";
 			sourceTree = "<group>";
@@ -520,7 +526,9 @@
 				0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */,
 				0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
+				0DBFD367205F4D0E009EF037 /* DraggableCollectionViewController.swift in Sources */,
 				0DDB35152030772F00851A87 /* MemesUtil.swift in Sources */,
+				0DBFD36B205F4FBF009EF037 /* ColorSelectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

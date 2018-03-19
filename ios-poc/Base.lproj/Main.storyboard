@@ -69,18 +69,28 @@
                                     <segue destination="Xdb-1f-En7" kind="presentation" id="Icm-al-XNd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPP-2F-KEX">
+                                <rect key="frame" x="109" y="210" width="157" height="30"/>
+                                <state key="normal" title="DraggableView"/>
+                                <connections>
+                                    <segue destination="yWd-Kd-O3V" kind="presentation" id="cDJ-pt-xcX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oZ0-da-S0f" firstAttribute="top" secondItem="7Y1-L5-VIb" secondAttribute="bottom" constant="8" symbolic="YES" id="0gC-1F-Efx"/>
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="trailing" secondItem="oZ0-da-S0f" secondAttribute="trailing" id="26Z-cR-mns"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3aE-nt-tVG"/>
+                            <constraint firstItem="MPP-2F-KEX" firstAttribute="trailing" secondItem="49P-eB-PqI" secondAttribute="trailing" id="3e7-pP-Ik2"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8yE-Lq-3z2"/>
+                            <constraint firstItem="MPP-2F-KEX" firstAttribute="leading" secondItem="49P-eB-PqI" secondAttribute="leading" id="9yt-eD-F8h"/>
                             <constraint firstItem="49P-eB-PqI" firstAttribute="top" secondItem="ZGX-ai-IJO" secondAttribute="bottom" constant="8" symbolic="YES" id="Cuc-oW-LFS"/>
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="leading" secondItem="oZ0-da-S0f" secondAttribute="leading" id="GSv-CK-34Q"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="top" secondItem="Gf6-hK-tEb" secondAttribute="bottom" constant="8" symbolic="YES" id="L5n-5V-rdz"/>
                             <constraint firstItem="49P-eB-PqI" firstAttribute="centerX" secondItem="ZGX-ai-IJO" secondAttribute="centerX" id="R6L-RO-ajw"/>
                             <constraint firstItem="Gf6-hK-tEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rv5-0f-SRw"/>
+                            <constraint firstItem="MPP-2F-KEX" firstAttribute="top" secondItem="49P-eB-PqI" secondAttribute="bottom" constant="8" symbolic="YES" id="T7v-Db-1uo"/>
                             <constraint firstItem="ZGX-ai-IJO" firstAttribute="top" secondItem="oZ0-da-S0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Tjl-Oh-WPM"/>
                             <constraint firstItem="oZ0-da-S0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="cdV-O5-tYa"/>
                             <constraint firstItem="7Y1-L5-VIb" firstAttribute="centerX" secondItem="Gf6-hK-tEb" secondAttribute="centerX" id="goT-30-u9D"/>
@@ -93,21 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
-        </scene>
-        <!--View Controler-->
-        <scene sceneID="bUM-cH-MD9">
-            <objects>
-                <viewController restorationIdentifier="CGPDFViewControler" storyboardIdentifier="CGPDFViewControler" id="0t8-Ji-tv0" customClass="CGPDFViewControler" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0BS-8s-IzP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="eCS-FL-BHi"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfu-ld-yRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-690" y="786"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="yZx-zX-QCR">
@@ -315,6 +310,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df4-kv-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="-626"/>
+        </scene>
+        <!--Draggable Collection View Controller-->
+        <scene sceneID="1tr-Uo-cAl">
+            <objects>
+                <viewController id="yWd-Kd-O3V" customClass="DraggableCollectionViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnd-vE-Qwa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QES-MS-qq6">
+                                <rect key="frame" x="0.0" y="47" width="375" height="620"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tso-NW-7fU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Kap-Xk-W8f" customClass="ColorSelectionCell" customModule="ios_poc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yWd-Kd-O3V" id="PeM-13-IXu"/>
+                                    <outlet property="delegate" destination="yWd-Kd-O3V" id="a80-I1-Z0c"/>
+                                    <outlet property="prefetchDataSource" destination="yWd-Kd-O3V" id="amB-X9-fg4"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsH-wG-rJe">
+                                <rect key="frame" x="313" y="9" width="46" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="yWd-Kd-O3V" eventType="touchUpInside" id="o4g-uM-KBI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tsH-wG-rJe" firstAttribute="trailing" secondItem="dnd-vE-Qwa" secondAttribute="trailingMargin" id="9Gz-kq-qhh"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="leading" secondItem="dnd-vE-Qwa" secondAttribute="leading" id="9ah-eS-ClJ"/>
+                            <constraint firstAttribute="trailing" secondItem="QES-MS-qq6" secondAttribute="trailing" id="U0G-na-jyH"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="bottom" secondItem="OnD-4c-a1e" secondAttribute="bottom" id="cPN-bz-IV2"/>
+                            <constraint firstItem="tsH-wG-rJe" firstAttribute="leading" secondItem="OnD-4c-a1e" secondAttribute="leading" constant="313" id="lgm-pd-QI1"/>
+                            <constraint firstItem="tsH-wG-rJe" firstAttribute="top" secondItem="dnd-vE-Qwa" secondAttribute="topMargin" constant="-11" id="pwm-rv-1pS"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="top" secondItem="tsH-wG-rJe" secondAttribute="bottom" constant="8" symbolic="YES" id="vy5-WF-aYH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OnD-4c-a1e"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="QES-MS-qq6" id="4mx-lP-kB0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUx-WA-IJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="-625.63718140929541"/>
         </scene>
     </scenes>
 </document>
