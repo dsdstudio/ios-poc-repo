@@ -26,10 +26,9 @@ class LassoViewController: UIViewController {
         lassoView.backgroundColor = .white
         
         view.addSubview(lassoView)
-        
-        segmentedControl.frame = CGRect(origin: CGPoint(x:15, y:22), size: CGSize(width: 200, height: 44))
+
+        self.navigationItem.titleView = segmentedControl
         segmentedControl.addTarget(self, action: #selector(changed(_:)), for: .valueChanged)
-        view.addSubview(segmentedControl)
     }
     
     @objc func changed(_ sender:UISegmentedControl) {

@@ -148,13 +148,13 @@
 				0DDB349B202D24E700851A87 /* ViewController.swift */,
 				0DDB349D202D24E700851A87 /* Main.storyboard */,
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
-				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
-				0DDB34D0202D31E300851A87 /* CanvasViewController.swift */,
 				0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */,
 				0DDB34A0202D24E700851A87 /* Assets.xcassets */,
 				0D3F2849203599F8000162C0 /* sample_pdf.pdf */,
 				0DDB34A5202D24E700851A87 /* Info.plist */,
 				0D3F28532038A5F9000162C0 /* PDFParser.swift */,
+				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
+				0DDB34D0202D31E300851A87 /* CanvasViewController.swift */,
 				0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */,
 				0D3F285820399CFA000162C0 /* PDFKitBasedViewController.swift */,
 				0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */,
@@ -226,6 +226,7 @@
 				0DDB3492202D24E700851A87 /* Sources */,
 				0DDB3493202D24E700851A87 /* Frameworks */,
 				0DDB3494202D24E700851A87 /* Resources */,
+				AD42649E00ABA0842A618DC0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +366,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD42649E00ABA0842A618DC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB6879939FE1BC7E905EB536 /* [CP] Check Pods Manifest.lock */ = {

@@ -6,7 +6,7 @@ target 'ios-poc' do
   use_frameworks!
 
   # Pods for ios-poc
-
+  pod 'SwiftIcons', '~> 2.0.1'
   target 'ios-pocTests' do
     inherit! :search_paths
     # Pods for testing

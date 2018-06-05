@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zej-wK-mJz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Lasso View Controller-->
         <scene sceneID="2Yh-wU-mFl">
             <objects>
-                <viewController id="Xdb-1f-En7" customClass="LassoViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LassoViewController" id="Xdb-1f-En7" customClass="LassoViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wWz-l4-qCP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,80 +34,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf6-hK-tEb">
-                                <rect key="frame" x="124" y="20" width="126" height="30"/>
-                                <state key="normal" title="ScrollView Test"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aRr-fL-ZS5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="EyQ-zH-OMl" detailTextLabel="63k-39-ywL" style="IBUITableViewCellStyleSubtitle" id="ivj-bD-txM">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ivj-bD-txM" id="iMW-fB-Med">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EyQ-zH-OMl">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="63k-39-ywL">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="sud-bx-u7p" kind="presentation" id="576-so-ijl"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XUt-vA-Ute"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="D2q-LW-JFN"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Y1-L5-VIb">
-                                <rect key="frame" x="75" y="58" width="225" height="30"/>
-                                <state key="normal" title="Drawing View And lasso Tool"/>
-                                <connections>
-                                    <segue destination="yrO-AA-rlK" kind="presentation" id="RKu-qb-YIS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-da-S0f">
-                                <rect key="frame" x="94" y="96" width="187" height="30"/>
-                                <state key="normal" title="CGPDFDocument Sample"/>
-                                <connections>
-                                    <segue destination="XM3-ZW-64Y" kind="presentation" id="Fkm-0p-YkO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-ai-IJO">
-                                <rect key="frame" x="94" y="134" width="187" height="30"/>
-                                <state key="normal" title="PDFKitBased Sample"/>
-                                <connections>
-                                    <segue destination="qm1-LQ-RYl" kind="presentation" id="9D4-wB-5en"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49P-eB-PqI">
-                                <rect key="frame" x="109" y="172" width="157" height="30"/>
-                                <state key="normal" title="Lasso Tool Prototyping"/>
-                                <connections>
-                                    <segue destination="Xdb-1f-En7" kind="presentation" id="Icm-al-XNd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPP-2F-KEX">
-                                <rect key="frame" x="109" y="210" width="157" height="30"/>
-                                <state key="normal" title="DraggableView"/>
-                                <connections>
-                                    <segue destination="yWd-Kd-O3V" kind="presentation" id="cDJ-pt-xcX"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oZ0-da-S0f" firstAttribute="top" secondItem="7Y1-L5-VIb" secondAttribute="bottom" constant="8" symbolic="YES" id="0gC-1F-Efx"/>
-                            <constraint firstItem="ZGX-ai-IJO" firstAttribute="trailing" secondItem="oZ0-da-S0f" secondAttribute="trailing" id="26Z-cR-mns"/>
-                            <constraint firstItem="Gf6-hK-tEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3aE-nt-tVG"/>
-                            <constraint firstItem="MPP-2F-KEX" firstAttribute="trailing" secondItem="49P-eB-PqI" secondAttribute="trailing" id="3e7-pP-Ik2"/>
-                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8yE-Lq-3z2"/>
-                            <constraint firstItem="MPP-2F-KEX" firstAttribute="leading" secondItem="49P-eB-PqI" secondAttribute="leading" id="9yt-eD-F8h"/>
-                            <constraint firstItem="49P-eB-PqI" firstAttribute="top" secondItem="ZGX-ai-IJO" secondAttribute="bottom" constant="8" symbolic="YES" id="Cuc-oW-LFS"/>
-                            <constraint firstItem="ZGX-ai-IJO" firstAttribute="leading" secondItem="oZ0-da-S0f" secondAttribute="leading" id="GSv-CK-34Q"/>
-                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="top" secondItem="Gf6-hK-tEb" secondAttribute="bottom" constant="8" symbolic="YES" id="L5n-5V-rdz"/>
-                            <constraint firstItem="49P-eB-PqI" firstAttribute="centerX" secondItem="ZGX-ai-IJO" secondAttribute="centerX" id="R6L-RO-ajw"/>
-                            <constraint firstItem="Gf6-hK-tEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rv5-0f-SRw"/>
-                            <constraint firstItem="MPP-2F-KEX" firstAttribute="top" secondItem="49P-eB-PqI" secondAttribute="bottom" constant="8" symbolic="YES" id="T7v-Db-1uo"/>
-                            <constraint firstItem="ZGX-ai-IJO" firstAttribute="top" secondItem="oZ0-da-S0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Tjl-Oh-WPM"/>
-                            <constraint firstItem="oZ0-da-S0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="cdV-O5-tYa"/>
-                            <constraint firstItem="7Y1-L5-VIb" firstAttribute="centerX" secondItem="Gf6-hK-tEb" secondAttribute="centerX" id="goT-30-u9D"/>
-                            <constraint firstItem="oZ0-da-S0f" firstAttribute="centerX" secondItem="7Y1-L5-VIb" secondAttribute="centerX" id="i4k-jm-94Q"/>
-                            <constraint firstItem="Gf6-hK-tEb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="lvC-gJ-aaW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aRr-fL-ZS5" secondAttribute="trailing" id="HWa-0q-dqj"/>
+                            <constraint firstItem="aRr-fL-ZS5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yvp-C3-vLK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aRr-fL-ZS5" secondAttribute="bottom" id="ZRi-9F-Qw8"/>
+                            <constraint firstItem="aRr-fL-ZS5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g31-SR-pug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vS4-tL-Fpo"/>
+                    <connections>
+                        <outlet property="tableView" destination="aRr-fL-ZS5" id="vA0-sn-AoM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+            <point key="canvasLocation" x="972" y="31.934032983508249"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="yZx-zX-QCR">
             <objects>
-                <viewController id="XM3-ZW-64Y" customClass="CGPDFPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CGPDFPageViewController" id="XM3-ZW-64Y" customClass="CGPDFPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o7S-UJ-WLp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,58 +105,33 @@
         <!--Canvas View Controller-->
         <scene sceneID="PTa-Ul-HPU">
             <objects>
-                <viewController id="yrO-AA-rlK" customClass="CanvasViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CanvasViewController" id="yrO-AA-rlK" customClass="CanvasViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lt-1U-zPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdi-6G-vm6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="DrawingView And Lasso" id="4ve-Oh-chF">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Lcu-Zx-fTh">
-                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="TW1-uu-0QF">
-                                                <rect key="frame" x="16" y="7" width="121" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <segments>
-                                                    <segment title="Pen" width="60"/>
-                                                    <segment title="Lasso" width="60"/>
-                                                </segments>
-                                            </segmentedControl>
-                                            <connections>
-                                                <action selector="modeSelected:" destination="yrO-AA-rlK" id="3tY-KD-f1y"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="S2T-oH-sNa">
-                                            <connections>
-                                                <action selector="close:" destination="yrO-AA-rlK" id="eMH-Tn-78W"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mD7-VF-zVY" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaW-i4-vHq" customClass="PDFThumbnailView">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pQL-OP-KRs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Neo-Jf-WVs" firstAttribute="bottom" secondItem="eaW-i4-vHq" secondAttribute="bottom" id="61Z-W3-UQk"/>
-                            <constraint firstItem="Hdi-6G-vm6" firstAttribute="leading" secondItem="3lt-1U-zPd" secondAttribute="leading" id="IIf-Ph-Hzz"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="bottom" constant="-40" id="KoO-kV-iTA"/>
-                            <constraint firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="VZZ-V2-cYR"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Neo-Jf-WVs" secondAttribute="top" constant="44" id="Jua-sy-ABq"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="leading" secondItem="Neo-Jf-WVs" secondAttribute="leading" id="PRd-D4-Vlm"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="trailing" secondItem="Neo-Jf-WVs" secondAttribute="trailing" id="TZR-dy-Mzn"/>
                             <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="VqS-VU-ggO"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="bWC-tu-Kbe"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Hdi-6G-vm6" secondAttribute="bottom" id="chH-b1-Dmc"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="gtF-3N-PJQ"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="trailing" secondItem="Hdi-6G-vm6" secondAttribute="trailing" id="nez-hK-2KE"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="leading" secondItem="Hdi-6G-vm6" secondAttribute="leading" id="vzG-do-6W8"/>
-                            <constraint firstItem="Hdi-6G-vm6" firstAttribute="top" secondItem="3lt-1U-zPd" secondAttribute="top" id="wB0-9m-Vfj"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Neo-Jf-WVs" secondAttribute="leading" id="aUz-ON-D4m"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Neo-Jf-WVs" secondAttribute="trailing" id="acS-lu-GTr"/>
+                            <constraint firstItem="eaW-i4-vHq" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="iVt-z5-Udc"/>
+                            <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="qHt-NY-KPo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
                     </view>
@@ -189,7 +147,7 @@
         <!--Nested Scroll View Controller-->
         <scene sceneID="hXa-p5-fFh">
             <objects>
-                <viewController id="sud-bx-u7p" customClass="NestedScrollViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NestedScrollViewController" id="sud-bx-u7p" customClass="NestedScrollViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T16-fR-u8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,14 +155,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-w3-Gdw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIP-kX-LRK">
-                                <rect key="frame" x="325" y="22" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <action selector="close:" destination="sud-bx-u7p" eventType="touchUpInside" id="Pyf-0b-URe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -221,37 +171,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6m-Ev-TuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="32"/>
+            <point key="canvasLocation" x="1695.2" y="31.934032983508249"/>
         </scene>
         <!--Kit Based Page View Controller-->
         <scene sceneID="R2C-BP-7h1">
             <objects>
-                <viewController id="qm1-LQ-RYl" customClass="PDFKitBasedPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFKitBasedPageViewController" id="qm1-LQ-RYl" customClass="PDFKitBasedPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rHu-5W-9pu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wa-cW-hjJ">
-                                <rect key="frame" x="16" y="20" width="134" height="30"/>
-                                <state key="normal" title="Page Scroll Toggle"/>
-                                <connections>
-                                    <action selector="toggle:" destination="qm1-LQ-RYl" eventType="touchUpInside" id="7w5-hi-ABd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1a-Tu-X8X">
-                                <rect key="frame" x="158" y="20" width="187" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1a-Tu-X8X">
+                                <rect key="frame" x="172" y="61" width="187" height="30"/>
                                 <state key="normal" title="Add Random Annotations"/>
                                 <connections>
                                     <action selector="addRandomAnnotations:" destination="qm1-LQ-RYl" eventType="touchUpInside" id="cdT-rR-fL0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wa-cW-hjJ">
+                                <rect key="frame" x="16" y="61" width="134" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="BFR-38-Twv"/>
+                                </constraints>
+                                <state key="normal" title="Page Scroll Toggle"/>
+                                <connections>
+                                    <action selector="toggle:" destination="qm1-LQ-RYl" eventType="touchUpInside" id="7w5-hi-ABd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="leading" secondItem="rHu-5W-9pu" secondAttribute="leadingMargin" id="Khi-G6-Ygj"/>
-                            <constraint firstItem="gnz-xL-AAD" firstAttribute="top" secondItem="7Wa-cW-hjJ" secondAttribute="bottom" constant="-30" id="aMY-TQ-7Ou"/>
-                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="top" secondItem="gnz-xL-AAD" secondAttribute="top" id="dYt-It-0mg"/>
+                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="baseline" secondItem="v1a-Tu-X8X" secondAttribute="baseline" id="CaU-i8-6x7"/>
+                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="top" secondItem="gnz-xL-AAD" secondAttribute="top" constant="41" id="Y0Y-kD-hof"/>
+                            <constraint firstItem="v1a-Tu-X8X" firstAttribute="leading" secondItem="7Wa-cW-hjJ" secondAttribute="trailing" constant="22" id="YY2-yW-RZg"/>
+                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="leading" secondItem="rHu-5W-9pu" secondAttribute="leadingMargin" id="ZRo-wj-f46"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gnz-xL-AAD"/>
                     </view>
@@ -267,7 +220,7 @@
         <!--Kit View Controller-->
         <scene sceneID="oTk-1r-ePT">
             <objects>
-                <viewController restorationIdentifier="PDFKitViewController" storyboardIdentifier="PDFKitViewController" id="86V-ot-kOi" customClass="PDFKitViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFKitViewController" id="86V-ot-kOi" customClass="PDFKitViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0vg-y3-EZi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,13 +267,13 @@
         <!--Draggable Collection View Controller-->
         <scene sceneID="1tr-Uo-cAl">
             <objects>
-                <viewController id="yWd-Kd-O3V" customClass="DraggableCollectionViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DraggableCollectionViewController" id="yWd-Kd-O3V" customClass="DraggableCollectionViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dnd-vE-Qwa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QES-MS-qq6">
-                                <rect key="frame" x="0.0" y="47" width="375" height="620"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tso-NW-7fU">
                                     <size key="itemSize" width="50" height="50"/>
@@ -344,23 +297,13 @@
                                     <outlet property="prefetchDataSource" destination="yWd-Kd-O3V" id="amB-X9-fg4"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsH-wG-rJe">
-                                <rect key="frame" x="313" y="9" width="46" height="30"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="close:" destination="yWd-Kd-O3V" eventType="touchUpInside" id="o4g-uM-KBI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tsH-wG-rJe" firstAttribute="trailing" secondItem="dnd-vE-Qwa" secondAttribute="trailingMargin" id="9Gz-kq-qhh"/>
-                            <constraint firstItem="QES-MS-qq6" firstAttribute="leading" secondItem="dnd-vE-Qwa" secondAttribute="leading" id="9ah-eS-ClJ"/>
-                            <constraint firstAttribute="trailing" secondItem="QES-MS-qq6" secondAttribute="trailing" id="U0G-na-jyH"/>
-                            <constraint firstItem="QES-MS-qq6" firstAttribute="bottom" secondItem="OnD-4c-a1e" secondAttribute="bottom" id="cPN-bz-IV2"/>
-                            <constraint firstItem="tsH-wG-rJe" firstAttribute="leading" secondItem="OnD-4c-a1e" secondAttribute="leading" constant="313" id="lgm-pd-QI1"/>
-                            <constraint firstItem="tsH-wG-rJe" firstAttribute="top" secondItem="dnd-vE-Qwa" secondAttribute="topMargin" constant="-11" id="pwm-rv-1pS"/>
-                            <constraint firstItem="QES-MS-qq6" firstAttribute="top" secondItem="tsH-wG-rJe" secondAttribute="bottom" constant="8" symbolic="YES" id="vy5-WF-aYH"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="trailing" secondItem="OnD-4c-a1e" secondAttribute="trailing" id="1ne-LX-v05"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="top" secondItem="OnD-4c-a1e" secondAttribute="top" constant="44" id="DZh-33-DJp"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="leading" secondItem="OnD-4c-a1e" secondAttribute="leading" id="fgd-Gz-sIO"/>
+                            <constraint firstItem="QES-MS-qq6" firstAttribute="bottom" secondItem="OnD-4c-a1e" secondAttribute="bottom" id="oKH-3A-13Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OnD-4c-a1e"/>
                     </view>
@@ -371,6 +314,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUx-WA-IJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-796" y="-625.63718140929541"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uoa-gB-IFU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zej-wK-mJz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3XP-Mw-VE5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oxU-0b-Z4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Gh-FN-v2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>

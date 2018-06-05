@@ -12,13 +12,10 @@ import PDFKit
 class CanvasViewController: UIViewController {
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
-    @IBAction func close(_ sender: Any) {
-        dismiss(animated: true) {
-            
-        }
-    }
     
     override func viewDidLoad() {
+        self.title = "DrawingView And Lasso"
+        
         pdfView.backgroundColor = .darkGray
         pdfView.autoScales = true
         pdfView.minScaleFactor = 1

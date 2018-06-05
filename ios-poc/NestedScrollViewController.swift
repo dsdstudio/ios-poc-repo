@@ -9,16 +9,9 @@
 import UIKit
 
 class NestedScrollViewController: UIViewController {
-
     @IBOutlet weak var pagingScrollView: UIScrollView!
     var pages = [UIView]()
     var currentPage = 0
-    
-    @IBAction func close(_ sender: Any) {
-        dismiss(animated: true) {
-            
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,8 +60,6 @@ extension NestedScrollViewController:UIScrollViewDelegate, UIGestureRecognizerDe
         }
         let width = scrollView.frame.width
         let page = floor((scrollView.contentOffset.x - width / 2) / width) + 1
-//        let previousPage = CGFloat(currentPage)
-        
         currentPage = Int(page)
     }
 

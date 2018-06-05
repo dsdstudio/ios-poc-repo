@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 2e11b9329fce7dd290bd738f4dde76dac22972ee
+PODS:
+  - SwiftIcons (2.0.1)
+
+DEPENDENCIES:
+  - SwiftIcons (~> 2.0.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftIcons
+
+SPEC CHECKSUMS:
+  SwiftIcons: e475a56ae2c2da40672dbf16061ca5dd5cee7dbb
+
+PODFILE CHECKSUM: 2d3b685215f5ba00ea858d6617a5fea8228b5cf0
 
 COCOAPODS: 1.5.3
