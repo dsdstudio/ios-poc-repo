@@ -7,10 +7,6 @@ target 'ios-poc' do
 
   # Pods for ios-poc
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
-  pod 'GoogleAPIClientForREST/Drive', '~> 1.3.2'
   target 'ios-pocTests' do
     inherit! :search_paths
     # Pods for testing

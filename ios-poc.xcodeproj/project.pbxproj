@@ -117,14 +117,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D3F285520399A0B000162C0 /* hybridDraw */ = {
-			isa = PBXGroup;
-			children = (
-				0D3F285620399A29000162C0 /* MemesPdfView.swift */,
-			);
-			path = hybridDraw;
-			sourceTree = "<group>";
-		};
 		0DDB348D202D24E700851A87 = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +142,6 @@
 		0DDB3498202D24E700851A87 /* ios-poc */ = {
 			isa = PBXGroup;
 			children = (
-				0D3F285520399A0B000162C0 /* hybridDraw */,
 				0DDB35142030772F00851A87 /* MemesUtil.swift */,
 				0DDB34CD202D30DD00851A87 /* Drawing */,
 				0DDB3499202D24E700851A87 /* AppDelegate.swift */,
@@ -195,6 +186,7 @@
 		0DDB34CD202D30DD00851A87 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				0D3F285620399A29000162C0 /* MemesPdfView.swift */,
 				0DDB34CE202D30EC00851A87 /* CanvasView.swift */,
 			);
 			path = Drawing;
@@ -234,8 +226,6 @@
 				0DDB3492202D24E700851A87 /* Sources */,
 				0DDB3493202D24E700851A87 /* Frameworks */,
 				0DDB3494202D24E700851A87 /* Resources */,
-				2A67280DBB9ABBBAD9C55517 /* [CP] Embed Pods Frameworks */,
-				A2196949FA6CEDBD36D06CB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,8 +244,6 @@
 				0DDB34A6202D24E700851A87 /* Sources */,
 				0DDB34A7202D24E700851A87 /* Frameworks */,
 				0DDB34A8202D24E700851A87 /* Resources */,
-				819E59F1BE310D1E7C80EE0E /* [CP] Embed Pods Frameworks */,
-				68D97B1D93A4A3E381D299C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,8 +263,6 @@
 				0DDB34B1202D24E700851A87 /* Sources */,
 				0DDB34B2202D24E700851A87 /* Frameworks */,
 				0DDB34B3202D24E700851A87 /* Resources */,
-				0F2E774CBB246FACC4C25508 /* [CP] Embed Pods Frameworks */,
-				AEF76E657DE2EA41CBFE2C64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,7 +281,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = dsdstudio.inc;
 				TargetAttributes = {
 					0DDB3495202D24E700851A87 = {
@@ -363,36 +349,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F2E774CBB246FACC4C25508 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-pocUITests/Pods-ios-pocUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2A67280DBB9ABBBAD9C55517 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		62B092503ED117E5FC55C31D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,66 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68D97B1D93A4A3E381D299C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-pocTests/Pods-ios-pocTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		819E59F1BE310D1E7C80EE0E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-pocTests/Pods-ios-pocTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2196949FA6CEDBD36D06CB8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AEF76E657DE2EA41CBFE2C64 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-pocUITests/Pods-ios-pocUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB6879939FE1BC7E905EB536 /* [CP] Check Pods Manifest.lock */ = {
@@ -597,6 +493,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -604,6 +501,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -654,6 +552,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -661,6 +560,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
