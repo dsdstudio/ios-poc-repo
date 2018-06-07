@@ -11,64 +11,47 @@ import UIKit
 private let reuseIdentifier = "cell"
 private let cellDataIdentifier = "data"
 
-class DraggableCollectionViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
-    var colors:[UIColor] = {
-        var list = [UIColor]()
-        for v in 0...10 {
-            list.append(UIColor.randomColor())
-        }
-        return list
-    }()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.dragDelegate = self
-        collectionView.dropDelegate = self
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func close(_ sender: Any) {
-        dismiss(animated: true)
-    }
+struct TestData {
+    var color:UIColor
+    var index:Int
 }
-
-extension DraggableCollectionViewController:UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+class DraggableCollectionViewController: UICollectionViewController {
+    var list:[TestData] = (0...100).map{ TestData(color: UIColor.randomColor(), index: $0)}
+    override func viewDidLoad() {
+        collectionView?.dragDelegate = self
+        collectionView?.dropDelegate = self
+        title = "CollectionView Drag N Drop Sample"
+    }
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return list.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ColorSelectionCell
-        cell.color = colors[indexPath.row]
-        
+        let data = list[indexPath.row]
+        cell.color = data.color
+        cell.text = "\(data.index)"
         return cell
     }
-}
-
-extension DraggableCollectionViewController: UICollectionViewDataSource {
     
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("s: \(sourceIndexPath) e: \(destinationIndexPath)")
+        list.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+    }
 }
 
 extension DraggableCollectionViewController: UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let d = colors[indexPath.row]
-        // NSITemProvider안에 객체는 NSSecureCoding protocol로
-        let p = NSItemProvider(item: d, typeIdentifier: cellDataIdentifier)
+        let d = list[indexPath.row]
+        let p = NSItemProvider(item: "" as NSString, typeIdentifier: cellDataIdentifier)
         let item = UIDragItem(itemProvider: p)
         item.localObject = d
         return [item]
     }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
-        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
@@ -87,36 +70,28 @@ extension DraggableCollectionViewController: UICollectionViewDragDelegate {
         return preview
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("s: \(sourceIndexPath) e: \(destinationIndexPath)")
-        colors.swapAt(sourceIndexPath.row, destinationIndexPath.row)
     }
 }
 
 
 extension DraggableCollectionViewController: UICollectionViewDropDelegate {
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        let p = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
-        var destinationIndex = p.item
-        for item in coordinator.items {
-            guard let _ = item.dragItem.localObject as? UIColor else { continue }
-            let insertionIndexPath = IndexPath(item: destinationIndex, section: 0)
-            let sourceIndexPath = item.sourceIndexPath!
-            
-            collectionView.performBatchUpdates({
-                colors.swapAt(sourceIndexPath.row, destinationIndex)
-                collectionView.deleteItems(at: [sourceIndexPath])
-                collectionView.insertItems(at: [insertionIndexPath])
-            })
-            coordinator.drop(item.dragItem, toItemAt: insertionIndexPath)
-            
-            destinationIndex += 1
-        }
+        guard let destinationIndexPath = coordinator.destinationIndexPath,
+            let dragItem = coordinator.items.first?.dragItem,
+            let sourceIndexPath = coordinator.items.first?.sourceIndexPath,
+            let data = dragItem.localObject as? TestData
+        else { return }
+        
+        list.remove(at: sourceIndexPath.row)
+        list.insert(data, at: destinationIndexPath.row)
+        
+        collectionView.performBatchUpdates({
+            collectionView.deleteItems(at: [sourceIndexPath])
+            collectionView.insertItems(at: [destinationIndexPath])
+        })
+        coordinator.drop(dragItem, toItemAt: destinationIndexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
@@ -124,7 +99,6 @@ extension DraggableCollectionViewController: UICollectionViewDropDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        let proposal = UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-        return proposal
+        return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
 }
