@@ -28,7 +28,7 @@ class LassoViewController: UIViewController {
         view.addSubview(lassoView)
 
         self.navigationItem.titleView = segmentedControl
-        segmentedControl.addTarget(self, action: #selector(changed(_:)), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(changed(_:)), for: UIControl.Event.valueChanged)
     }
     
     @objc func changed(_ sender:UISegmentedControl) {
@@ -190,8 +190,8 @@ class LassoToolGestureRecognizer:UIGestureRecognizer {
             let l = LassoLayer()
             l.path = lassoView?.lassoPath?.cgPath.copy()
             l.lineWidth = 3
-            l.lineJoin = kCALineJoinRound
-            l.lineCap = kCALineCapRound
+            l.lineJoin = convertToCAShapeLayerLineJoin(convertFromCAShapeLayerLineJoin(CAShapeLayerLineJoin.round))
+            l.lineCap = convertToCAShapeLayerLineCap(convertFromCAShapeLayerLineCap(CAShapeLayerLineCap.round))
             l.lineDashPattern = [0.0, 8.0]
             l.strokeColor = UIColor.blue.cgColor
             l.fillColor = UIColor(red: 29 / 255, green: 18/255, blue: 22/255, alpha: 0.1).cgColor
@@ -271,4 +271,24 @@ class LassoView:UIView {
             activePath?.stroke()
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAShapeLayerLineJoin(_ input: String) -> CAShapeLayerLineJoin {
+	return CAShapeLayerLineJoin(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCAShapeLayerLineJoin(_ input: CAShapeLayerLineJoin) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAShapeLayerLineCap(_ input: String) -> CAShapeLayerLineCap {
+	return CAShapeLayerLineCap(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCAShapeLayerLineCap(_ input: CAShapeLayerLineCap) -> String {
+	return input.rawValue
 }

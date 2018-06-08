@@ -46,10 +46,10 @@ class PDFKitBasedPageViewController: UIViewController {
     @IBAction func toggle(_ sender: Any) {
         if pageController.dataSource == nil {
             pageController.dataSource = self
-            toggleButton.setTitle("스크롤 락 설정", for: .normal)
+            toggleButton.setTitle("스크롤 락 설정", for: UIControl.State.normal)
         } else {
             pageController.dataSource = nil
-            toggleButton.setTitle("스크롤 락 해제", for: .normal)
+            toggleButton.setTitle("스크롤 락 해제", for: UIControl.State.normal)
         }
     }
     override func viewDidLoad() {
@@ -63,11 +63,11 @@ class PDFKitBasedPageViewController: UIViewController {
             let firstController = self.viewController(at: 0)!
             let controllers = [firstController]
             pageController?.setViewControllers(controllers, direction: .forward, animated: false, completion: nil)
-            self.addChildViewController(self.pageController!)
+            self.addChild(self.pageController!)
             self.view.insertSubview((pageController?.view)!, belowSubview: self.toggleButton)
             
             self.pageController?.view.frame = self.view.bounds
-            pageController?.didMove(toParentViewController: self)
+            pageController?.didMove(toParent: self)
         }
     }
     
