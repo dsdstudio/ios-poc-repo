@@ -88,8 +88,7 @@ extension DraggableCollectionViewController: UICollectionViewDropDelegate {
         list.insert(data, at: destinationIndexPath.row)
         
         collectionView.performBatchUpdates({
-            collectionView.deleteItems(at: [sourceIndexPath])
-            collectionView.insertItems(at: [destinationIndexPath])
+            collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
         })
         coordinator.drop(dragItem, toItemAt: destinationIndexPath)
     }
