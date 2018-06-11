@@ -16,7 +16,7 @@ struct TestData {
     var index:Int
 }
 class DraggableCollectionViewController: UICollectionViewController {
-    var list:[TestData] = (0...100).map{ TestData(color: UIColor.randomColor(), index: $0)}
+    var list:[TestData] = (0...10).map{ TestData(color: UIColor.randomColor(), index: $0)}
     override func viewDidLoad() {
         collectionView?.dragDelegate = self
         collectionView?.dropDelegate = self
@@ -34,11 +34,6 @@ class DraggableCollectionViewController: UICollectionViewController {
         cell.color = data.color
         cell.text = "\(data.index)"
         return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("s: \(sourceIndexPath) e: \(destinationIndexPath)")
-        list.swapAt(sourceIndexPath.row, destinationIndexPath.row)
     }
 }
 
@@ -90,6 +85,10 @@ extension DraggableCollectionViewController: UICollectionViewDropDelegate {
         collectionView.performBatchUpdates({
             collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
         })
+        
+        let minIndex = min(sourceIndexPath.row, destinationIndexPath.row)
+        let maxIndex = max(sourceIndexPath.row, destinationIndexPath.row)
+        collectionView.reloadItems(at: (minIndex...maxIndex).map{IndexPath(row: $0, section: 0)})
         coordinator.drop(dragItem, toItemAt: destinationIndexPath)
     }
     
