@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Kit View Controller-->
+        <scene sceneID="oTk-1r-ePT">
+            <objects>
+                <viewController storyboardIdentifier="PDFKitViewController" id="86V-ot-kOi" customClass="PDFKitViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vg-y3-EZi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-JO-Hpm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d16-cA-IEY" customClass="MemesPdfView" customModule="ios_poc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="d16-cA-IEY" firstAttribute="top" secondItem="dcF-JO-Hpm" secondAttribute="top" id="6yf-ay-Tef"/>
+                                    <constraint firstAttribute="bottom" secondItem="d16-cA-IEY" secondAttribute="bottom" id="HQ6-6n-FNf"/>
+                                    <constraint firstAttribute="trailing" secondItem="d16-cA-IEY" secondAttribute="trailing" id="bSt-2E-IqI"/>
+                                    <constraint firstItem="d16-cA-IEY" firstAttribute="leading" secondItem="dcF-JO-Hpm" secondAttribute="leading" id="c6x-rf-d61"/>
+                                    <constraint firstItem="d16-cA-IEY" firstAttribute="centerX" secondItem="dcF-JO-Hpm" secondAttribute="centerX" id="rZL-nh-97E"/>
+                                    <constraint firstItem="d16-cA-IEY" firstAttribute="centerY" secondItem="dcF-JO-Hpm" secondAttribute="centerY" id="rbR-aq-3AA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="86V-ot-kOi" id="Ops-Ne-INf"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dcF-JO-Hpm" secondAttribute="trailing" id="8JK-SD-79W"/>
+                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="top" secondItem="0vg-y3-EZi" secondAttribute="top" id="DW0-7u-AOQ"/>
+                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="leading" secondItem="0vg-y3-EZi" secondAttribute="leading" id="asb-e6-C9M"/>
+                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="bottom" secondItem="nH9-9W-Oys" secondAttribute="bottom" id="lAy-qe-KIq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nH9-9W-Oys"/>
+                    </view>
+                    <connections>
+                        <outlet property="editablePdfView" destination="d16-cA-IEY" id="zxk-Hc-ie3"/>
+                        <outlet property="scrollView" destination="dcF-JO-Hpm" id="FtG-3N-eGF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="df4-kv-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="-626"/>
+        </scene>
+    </scenes>
+</document>

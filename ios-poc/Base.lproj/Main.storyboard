@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zej-wK-mJz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zej-wK-mJz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lasso View Controller-->
-        <scene sceneID="2Yh-wU-mFl">
-            <objects>
-                <viewController storyboardIdentifier="LassoViewController" id="Xdb-1f-En7" customClass="LassoViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wWz-l4-qCP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="WcV-Le-lWK"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ADS-N5-LhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-813" y="83"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -87,217 +71,6 @@
             </objects>
             <point key="canvasLocation" x="972" y="31.934032983508249"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="yZx-zX-QCR">
-            <objects>
-                <viewController storyboardIdentifier="CGPDFPageViewController" id="XM3-ZW-64Y" customClass="CGPDFPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o7S-UJ-WLp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6tG-Xw-53A"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cFw-W8-JUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="18" y="785"/>
-        </scene>
-        <!--Canvas View Controller-->
-        <scene sceneID="PTa-Ul-HPU">
-            <objects>
-                <viewController storyboardIdentifier="CanvasViewController" id="yrO-AA-rlK" customClass="CanvasViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3lt-1U-zPd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mD7-VF-zVY" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaW-i4-vHq" customClass="PDFThumbnailView">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="pQL-OP-KRs"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="top" secondItem="Neo-Jf-WVs" secondAttribute="top" constant="44" id="Jua-sy-ABq"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="leading" secondItem="Neo-Jf-WVs" secondAttribute="leading" id="PRd-D4-Vlm"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="trailing" secondItem="Neo-Jf-WVs" secondAttribute="trailing" id="TZR-dy-Mzn"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="VqS-VU-ggO"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="leading" secondItem="Neo-Jf-WVs" secondAttribute="leading" id="aUz-ON-D4m"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="trailing" secondItem="Neo-Jf-WVs" secondAttribute="trailing" id="acS-lu-GTr"/>
-                            <constraint firstItem="eaW-i4-vHq" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="iVt-z5-Udc"/>
-                            <constraint firstItem="mD7-VF-zVY" firstAttribute="bottom" secondItem="Neo-Jf-WVs" secondAttribute="bottom" id="qHt-NY-KPo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Neo-Jf-WVs"/>
-                    </view>
-                    <connections>
-                        <outlet property="pdfThumbnailView" destination="eaW-i4-vHq" id="pXD-gY-Pmp"/>
-                        <outlet property="pdfView" destination="mD7-VF-zVY" id="80n-D9-a5C"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GAp-F1-Z07" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="756" y="779"/>
-        </scene>
-        <!--Nested Scroll View Controller-->
-        <scene sceneID="hXa-p5-fFh">
-            <objects>
-                <viewController storyboardIdentifier="NestedScrollViewController" id="sud-bx-u7p" customClass="NestedScrollViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="T16-fR-u8Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-w3-Gdw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cmC-w3-Gdw" firstAttribute="leading" secondItem="T16-fR-u8Y" secondAttribute="leading" id="3Dl-jN-aCL"/>
-                            <constraint firstAttribute="trailing" secondItem="cmC-w3-Gdw" secondAttribute="trailing" id="PTl-Sg-iuV"/>
-                            <constraint firstItem="cmC-w3-Gdw" firstAttribute="top" secondItem="T16-fR-u8Y" secondAttribute="top" id="nFW-Nq-Bmf"/>
-                            <constraint firstItem="cmC-w3-Gdw" firstAttribute="bottom" secondItem="A9t-XL-D7S" secondAttribute="bottom" id="rLk-ZQ-AaJ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="A9t-XL-D7S"/>
-                    </view>
-                    <connections>
-                        <outlet property="pagingScrollView" destination="cmC-w3-Gdw" id="3zH-Kc-mrZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e6m-Ev-TuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1695.2" y="31.934032983508249"/>
-        </scene>
-        <!--Draggable Collection View Controller-->
-        <scene sceneID="leJ-mp-jc4">
-            <objects>
-                <collectionViewController storyboardIdentifier="DraggableCollectionViewController" id="0se-Az-pLI" customClass="DraggableCollectionViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xrN-tW-hxB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oY5-p5-o2k">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rmb-rn-Edn" customClass="ColorSelectionCell" customModule="ios_poc" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="0se-Az-pLI" id="BEE-CQ-YUp"/>
-                            <outlet property="delegate" destination="0se-Az-pLI" id="WQt-Ry-xNN"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YtX-8H-Bxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1208" y="-623"/>
-        </scene>
-        <!--Kit Based Page View Controller-->
-        <scene sceneID="R2C-BP-7h1">
-            <objects>
-                <viewController storyboardIdentifier="PDFKitBasedPageViewController" id="qm1-LQ-RYl" customClass="PDFKitBasedPageViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rHu-5W-9pu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1a-Tu-X8X">
-                                <rect key="frame" x="172" y="61" width="187" height="30"/>
-                                <state key="normal" title="Add Random Annotations"/>
-                                <connections>
-                                    <action selector="addRandomAnnotations:" destination="qm1-LQ-RYl" eventType="touchUpInside" id="cdT-rR-fL0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wa-cW-hjJ">
-                                <rect key="frame" x="16" y="61" width="134" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="BFR-38-Twv"/>
-                                </constraints>
-                                <state key="normal" title="Page Scroll Toggle"/>
-                                <connections>
-                                    <action selector="toggle:" destination="qm1-LQ-RYl" eventType="touchUpInside" id="7w5-hi-ABd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="baseline" secondItem="v1a-Tu-X8X" secondAttribute="baseline" id="CaU-i8-6x7"/>
-                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="top" secondItem="gnz-xL-AAD" secondAttribute="top" constant="41" id="Y0Y-kD-hof"/>
-                            <constraint firstItem="v1a-Tu-X8X" firstAttribute="leading" secondItem="7Wa-cW-hjJ" secondAttribute="trailing" constant="22" id="YY2-yW-RZg"/>
-                            <constraint firstItem="7Wa-cW-hjJ" firstAttribute="leading" secondItem="rHu-5W-9pu" secondAttribute="leadingMargin" id="ZRo-wj-f46"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gnz-xL-AAD"/>
-                    </view>
-                    <connections>
-                        <outlet property="addButton" destination="v1a-Tu-X8X" id="p9r-Ys-8Ol"/>
-                        <outlet property="toggleButton" destination="7Wa-cW-hjJ" id="yNT-lc-aRC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPa-0T-iHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="-625.63718140929541"/>
-        </scene>
-        <!--Kit View Controller-->
-        <scene sceneID="oTk-1r-ePT">
-            <objects>
-                <viewController storyboardIdentifier="PDFKitViewController" id="86V-ot-kOi" customClass="PDFKitViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0vg-y3-EZi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-JO-Hpm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d16-cA-IEY" customClass="MemesPdfView" customModule="ios_poc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="d16-cA-IEY" firstAttribute="top" secondItem="dcF-JO-Hpm" secondAttribute="top" id="6yf-ay-Tef"/>
-                                    <constraint firstAttribute="bottom" secondItem="d16-cA-IEY" secondAttribute="bottom" id="HQ6-6n-FNf"/>
-                                    <constraint firstAttribute="trailing" secondItem="d16-cA-IEY" secondAttribute="trailing" id="bSt-2E-IqI"/>
-                                    <constraint firstItem="d16-cA-IEY" firstAttribute="leading" secondItem="dcF-JO-Hpm" secondAttribute="leading" id="c6x-rf-d61"/>
-                                    <constraint firstItem="d16-cA-IEY" firstAttribute="centerX" secondItem="dcF-JO-Hpm" secondAttribute="centerX" id="rZL-nh-97E"/>
-                                    <constraint firstItem="d16-cA-IEY" firstAttribute="centerY" secondItem="dcF-JO-Hpm" secondAttribute="centerY" id="rbR-aq-3AA"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="86V-ot-kOi" id="Ops-Ne-INf"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dcF-JO-Hpm" secondAttribute="trailing" id="8JK-SD-79W"/>
-                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="top" secondItem="0vg-y3-EZi" secondAttribute="top" id="DW0-7u-AOQ"/>
-                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="leading" secondItem="0vg-y3-EZi" secondAttribute="leading" id="asb-e6-C9M"/>
-                            <constraint firstItem="dcF-JO-Hpm" firstAttribute="bottom" secondItem="nH9-9W-Oys" secondAttribute="bottom" id="lAy-qe-KIq"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="nH9-9W-Oys"/>
-                    </view>
-                    <connections>
-                        <outlet property="editablePdfView" destination="d16-cA-IEY" id="zxk-Hc-ie3"/>
-                        <outlet property="scrollView" destination="dcF-JO-Hpm" id="FtG-3N-eGF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="df4-kv-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="756" y="-626"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uoa-gB-IFU">
             <objects>
@@ -315,6 +88,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gh-FN-v2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--DraggableCollectionViewController-->
+        <scene sceneID="8Rq-ta-90N">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DraggableCollectionViewController" storyboardName="DraggableCollectionView" referencedIdentifier="DraggableCollectionViewController" id="zJ3-hl-PBt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lzw-1I-OEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1208" y="-623"/>
+        </scene>
+        <!--LassoViewController-->
+        <scene sceneID="7oB-Rm-DhN">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LassoViewController" storyboardName="LassoView" referencedIdentifier="LassoViewController" id="xZc-fR-BKC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaH-mn-RCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="-230"/>
+        </scene>
+        <!--CanvasViewController-->
+        <scene sceneID="YGQ-8Y-GPO">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CanvasViewController" storyboardName="CanvasView" referencedIdentifier="CanvasViewController" id="ebj-hB-FkQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwV-vR-uaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="-505"/>
+        </scene>
+        <!--NestedScrollViewController-->
+        <scene sceneID="fJW-KL-MNX">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NestedScrollViewController" storyboardName="NestedScrollView" referencedIdentifier="NestedScrollViewController" id="Xfe-ch-jek" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwh-AS-nH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="-593"/>
+        </scene>
+        <!--PDFKitViewController-->
+        <scene sceneID="MZK-wZ-4Zo">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PDFKitViewController" storyboardName="PDFKitView" referencedIdentifier="PDFKitViewController" id="J2C-lr-kAc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xse-ua-Fol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="-428"/>
+        </scene>
+        <!--PDFKitBasedPageViewController-->
+        <scene sceneID="Oft-h2-aZP">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PDFKitBasedPageViewController" storyboardName="PDFKitPageView" referencedIdentifier="PDFKitBasedPageViewController" id="Qjg-B4-3KC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EU4-El-4P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="-468"/>
+        </scene>
+        <!--CGPDFPageViewController-->
+        <scene sceneID="8tt-Fi-J7I">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CGPDFPageViewController" storyboardName="CGPDFPageView" referencedIdentifier="CGPDFPageViewController" id="rcY-II-jRB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSl-Zc-sQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="-545"/>
         </scene>
     </scenes>
 </document>
