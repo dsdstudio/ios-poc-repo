@@ -36,6 +36,7 @@
 		CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A120CF5778005374D3 /* PDFKitView.storyboard */; };
 		CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */; };
 		CE6317A620CF57C0005374D3 /* CGPDFPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */; };
+		CE6317A720CF593C005374D3 /* LassoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179C20CF56C6005374D3 /* LassoView.storyboard */; };
 		CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -373,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6317A720CF593C005374D3 /* LassoView.storyboard in Resources */,
 				0DDB34A4202D24E700851A87 /* LaunchScreen.storyboard in Resources */,
 				CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */,
 				CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */,

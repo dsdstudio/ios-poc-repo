@@ -121,14 +121,6 @@
             </objects>
             <point key="canvasLocation" x="654" y="-593"/>
         </scene>
-        <!--PDFKitViewController-->
-        <scene sceneID="MZK-wZ-4Zo">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PDFKitViewController" storyboardName="PDFKitView" referencedIdentifier="PDFKitViewController" id="J2C-lr-kAc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xse-ua-Fol" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="624" y="-428"/>
-        </scene>
         <!--PDFKitBasedPageViewController-->
         <scene sceneID="Oft-h2-aZP">
             <objects>
