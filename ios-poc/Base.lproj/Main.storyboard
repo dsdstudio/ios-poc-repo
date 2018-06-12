@@ -95,7 +95,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="DraggableCollectionViewController" storyboardName="DraggableCollectionView" referencedIdentifier="DraggableCollectionViewController" id="zJ3-hl-PBt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzw-1I-OEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1208" y="-623"/>
+            <point key="canvasLocation" x="518" y="-482"/>
         </scene>
         <!--LassoViewController-->
         <scene sceneID="7oB-Rm-DhN">
@@ -103,15 +103,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="LassoViewController" storyboardName="LassoView" referencedIdentifier="LassoViewController" id="xZc-fR-BKC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaH-mn-RCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1105" y="-230"/>
-        </scene>
-        <!--CanvasViewController-->
-        <scene sceneID="YGQ-8Y-GPO">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CanvasViewController" storyboardName="CanvasView" referencedIdentifier="CanvasViewController" id="ebj-hB-FkQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EwV-vR-uaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="626" y="-505"/>
+            <point key="canvasLocation" x="447" y="-520"/>
         </scene>
         <!--NestedScrollViewController-->
         <scene sceneID="fJW-KL-MNX">
@@ -119,7 +111,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="NestedScrollViewController" storyboardName="NestedScrollView" referencedIdentifier="NestedScrollViewController" id="Xfe-ch-jek" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwh-AS-nH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="-593"/>
+            <point key="canvasLocation" x="482" y="-444"/>
         </scene>
         <!--PDFKitBasedPageViewController-->
         <scene sceneID="Oft-h2-aZP">
@@ -127,7 +119,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="PDFKitBasedPageViewController" storyboardName="PDFKitPageView" referencedIdentifier="PDFKitBasedPageViewController" id="Qjg-B4-3KC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EU4-El-4P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="-468"/>
+            <point key="canvasLocation" x="506" y="-365"/>
         </scene>
         <!--CGPDFPageViewController-->
         <scene sceneID="8tt-Fi-J7I">
@@ -135,7 +127,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="CGPDFPageViewController" storyboardName="CGPDFPageView" referencedIdentifier="CGPDFPageViewController" id="rcY-II-jRB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSl-Zc-sQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="-545"/>
+            <point key="canvasLocation" x="477" y="-405"/>
         </scene>
     </scenes>
 </document>

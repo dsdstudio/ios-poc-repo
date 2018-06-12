@@ -24,14 +24,11 @@
 		0DDB34BA202D24E700851A87 /* ios_pocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34B9202D24E700851A87 /* ios_pocUITests.swift */; };
 		0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */; };
 		0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */; };
-		0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34CE202D30EC00851A87 /* CanvasView.swift */; };
-		0DDB34D1202D31E300851A87 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB34D0202D31E300851A87 /* CanvasViewController.swift */; };
 		0DDB35152030772F00851A87 /* MemesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB35142030772F00851A87 /* MemesUtil.swift */; };
 		227ABF127147F82B5A7EEA62 /* Pods_ios_pocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917004476C8EA41FF723B8B4 /* Pods_ios_pocUITests.framework */; };
 		651D262858CABE22209086C6 /* Pods_ios_pocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47116AD904952E8DED8D8565 /* Pods_ios_pocTests.framework */; };
 		B1C84015998B9BF3E470BCD5 /* Pods_ios_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E653D77AD1ABFD7D5EF4C2E /* Pods_ios_poc.framework */; };
 		CE63179B20CE1135005374D3 /* DraggableCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179A20CE1135005374D3 /* DraggableCollectionView.storyboard */; };
-		CE63179E20CF5701005374D3 /* CanvasView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179D20CF5701005374D3 /* CanvasView.storyboard */; };
 		CE6317A020CF575B005374D3 /* NestedScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179F20CF575B005374D3 /* NestedScrollView.storyboard */; };
 		CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A120CF5778005374D3 /* PDFKitView.storyboard */; };
 		CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */; };
@@ -81,8 +78,6 @@
 		0DDB34BB202D24E700851A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
-		0DDB34CE202D30EC00851A87 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		0DDB34D0202D31E300851A87 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		0DDB35142030772F00851A87 /* MemesUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemesUtil.swift; sourceTree = "<group>"; };
 		0E653D77AD1ABFD7D5EF4C2E /* Pods_ios_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C93B4A5C99AD5FC60E97E10 /* Pods-ios-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-poc.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +89,6 @@
 		BDDC968E10C16422D4532490 /* Pods-ios-pocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-pocTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-pocTests/Pods-ios-pocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE63179A20CE1135005374D3 /* DraggableCollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DraggableCollectionView.storyboard; sourceTree = "<group>"; };
 		CE63179C20CF56C6005374D3 /* LassoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LassoView.storyboard; path = "/Users/user/proto/ios-poc-repo/ios-poc/Storyboards/LassoView.storyboard"; sourceTree = "<absolute>"; };
-		CE63179D20CF5701005374D3 /* CanvasView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CanvasView.storyboard; sourceTree = "<group>"; };
 		CE63179F20CF575B005374D3 /* NestedScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NestedScrollView.storyboard; sourceTree = "<group>"; };
 		CE6317A120CF5778005374D3 /* PDFKitView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitView.storyboard; sourceTree = "<group>"; };
 		CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitPageView.storyboard; sourceTree = "<group>"; };
@@ -195,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				0D3F285620399A29000162C0 /* MemesPdfView.swift */,
-				0DDB34CE202D30EC00851A87 /* CanvasView.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -217,7 +210,6 @@
 				CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */,
 				CE6317A120CF5778005374D3 /* PDFKitView.storyboard */,
 				CE63179F20CF575B005374D3 /* NestedScrollView.storyboard */,
-				CE63179D20CF5701005374D3 /* CanvasView.storyboard */,
 				CE63179C20CF56C6005374D3 /* LassoView.storyboard */,
 				CE63179A20CE1135005374D3 /* DraggableCollectionView.storyboard */,
 			);
@@ -237,7 +229,6 @@
 			children = (
 				CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */,
 				0DDB349B202D24E700851A87 /* ViewController.swift */,
-				0DDB34D0202D31E300851A87 /* CanvasViewController.swift */,
 				0D3F284B20359A56000162C0 /* CGPDFPageViewController.swift */,
 				0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */,
 				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
@@ -382,7 +373,6 @@
 				CE6317A020CF575B005374D3 /* NestedScrollView.storyboard in Resources */,
 				CE6317A620CF57C0005374D3 /* CGPDFPageView.storyboard in Resources */,
 				0DDB34A1202D24E700851A87 /* Assets.xcassets in Resources */,
-				CE63179E20CF5701005374D3 /* CanvasView.storyboard in Resources */,
 				0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */,
 				0DDB349F202D24E700851A87 /* Main.storyboard in Resources */,
 			);
@@ -486,11 +476,9 @@
 			files = (
 				0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
-				0DDB34CF202D30EC00851A87 /* CanvasView.swift in Sources */,
 				CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */,
 				0DDB349C202D24E700851A87 /* ViewController.swift in Sources */,
 				0DDB34CB202D2D8600851A87 /* ZoomableScrollView.swift in Sources */,
-				0DDB34D1202D31E300851A87 /* CanvasViewController.swift in Sources */,
 				0D3F28542038A5F9000162C0 /* PDFParser.swift in Sources */,
 				0D069A202048DA2000E1C8CE /* Extensions.swift in Sources */,
 				0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */,

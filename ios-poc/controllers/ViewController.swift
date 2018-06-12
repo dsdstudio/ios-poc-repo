@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     let menu:[TableData] = [
         TableData(text: "NestedScrollViewController", detailText: "중첩된 스크롤뷰", identifier: "NestedScrollViewController", action: commonFn),
-        TableData(text: "CanvasViewController", detailText: "Drawing", identifier: "CanvasViewController", action: commonFn),
+//        TableData(text: "CanvasViewController", detailText: "Drawing", identifier: "CanvasViewController", action: commonFn),
 //        TableData(text: "CGPDFPageViewController", detailText: "old cgpdfPage Based view controller", identifier: "CGPDFPageViewController", action: commonFn),
         TableData(text: "PDFKitBasedPageViewController", detailText: "pdfkit Based view controller", identifier: "PDFKitBasedPageViewController", action: commonFn),
         TableData(text: "LassoViewController", detailText: "Lasso Prototyping", identifier: "LassoViewController", action: commonFn),
@@ -46,8 +46,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = menu[indexPath.row]
-        data.action(self, data.identifier)
+        menu[indexPath.row].action(self, data.identifier)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
