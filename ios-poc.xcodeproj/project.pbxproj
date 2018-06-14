@@ -34,6 +34,7 @@
 		CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */; };
 		CE6317A620CF57C0005374D3 /* CGPDFPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */; };
 		CE6317A720CF593C005374D3 /* LassoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179C20CF56C6005374D3 /* LassoView.storyboard */; };
+		CE6317A920CF85CB005374D3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6317A820CF85CB005374D3 /* TestViewController.swift */; };
 		CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		CE6317A120CF5778005374D3 /* PDFKitView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitView.storyboard; sourceTree = "<group>"; };
 		CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitPageView.storyboard; sourceTree = "<group>"; };
 		CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CGPDFPageView.storyboard; sourceTree = "<group>"; };
+		CE6317A820CF85CB005374D3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
 		F7B9800A21508B54A5A098C0 /* Pods-ios-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-poc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +236,7 @@
 				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
 				0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */,
 				0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */,
+				CE6317A820CF85CB005374D3 /* TestViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6317A920CF85CB005374D3 /* TestViewController.swift in Sources */,
 				0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */,

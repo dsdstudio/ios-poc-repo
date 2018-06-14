@@ -36,7 +36,6 @@ class NestedScrollViewController: UIViewController {
             containerview.addSubview(l)
             pages.append(containerview)
             pagingScrollView.addSubview(scrollView)
-            
         }
         
         pagingScrollView.backgroundColor = UIColor.brown

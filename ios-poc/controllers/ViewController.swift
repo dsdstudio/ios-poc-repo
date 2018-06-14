@@ -29,7 +29,8 @@ class ViewController: UIViewController {
 //        TableData(text: "CGPDFPageViewController", detailText: "old cgpdfPage Based view controller", identifier: "CGPDFPageViewController", action: commonFn),
         TableData(text: "PDFKitBasedPageViewController", detailText: "pdfkit Based view controller", identifier: "PDFKitBasedPageViewController", action: commonFn),
         TableData(text: "LassoViewController", detailText: "Lasso Prototyping", identifier: "LassoViewController", action: commonFn),
-        TableData(text: "DraggableCollectionViewController", detailText: "collectionview dragndrop", identifier: "DraggableCollectionViewController", action: commonFn)
+        TableData(text: "DraggableCollectionViewController", detailText: "collectionview dragndrop", identifier: "DraggableCollectionViewController", action: commonFn),
+        TableData(text: "TestViewController", detailText: "scrollview autolayout Tets", identifier: "TestViewController", action: commonFn)
     ]
     override func viewDidLoad() {
         self.title = "IOS Prototyping Lab"
@@ -46,7 +47,8 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        menu[indexPath.row].action(self, data.identifier)
+        let data = menu[indexPath.row]
+        data.action(self, data.identifier)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
