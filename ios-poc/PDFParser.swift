@@ -21,11 +21,11 @@ class PDFParser {
         // TODO Graphics States Changes
 
         // Text Operations
-        PDFOperationType.text: { parse($0, PDFOperationType.text, $1) },
-        PDFOperationType.newLineText: { parse($0, PDFOperationType.newLineText, $1) },
-        PDFOperationType.newLineSetSpacing: { parse($0, PDFOperationType.newLineSetSpacing, $1) },
-        PDFOperationType.textAndSpaces: { parse($0, PDFOperationType.textAndSpaces, $1) },
-        PDFOperationType.endText: { parse($0, PDFOperationType.endText, $1) }
+        .text: { parse($0, .text, $1) },
+        .newLineText: { parse($0, .newLineText, $1) },
+        .newLineSetSpacing: { parse($0, .newLineSetSpacing, $1) },
+        .textAndSpaces: { parse($0, .textAndSpaces, $1) },
+        .endText: { parse($0, .endText, $1) }
     ]
     
     static func parse(_ scanner:CGPDFScannerRef, _ type:PDFOperationType, _ info:UnsafeRawPointer?) {
@@ -36,7 +36,7 @@ class PDFParser {
             break
         case .newLineText:
             let str = getString(scanner)
-            print("newLineText \(str)")
+            print("newLineText \(String(describing: str))")
         case .newLineSetSpacing:
             var r:CGPDFReal? = nil
             if CGPDFScannerPopNumber(scanner, &r!) {

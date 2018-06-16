@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         TableData(text: "PDFKitBasedPageViewController", detailText: "pdfkit Based view controller", identifier: "PDFKitBasedPageViewController", action: commonFn),
         TableData(text: "LassoViewController", detailText: "Lasso Prototyping", identifier: "LassoViewController", action: commonFn),
         TableData(text: "DraggableCollectionViewController", detailText: "collectionview dragndrop", identifier: "DraggableCollectionViewController", action: commonFn),
-        TableData(text: "TestViewController", detailText: "scrollview autolayout Tets", identifier: "TestViewController", action: commonFn)
+        TableData(text: "TestViewController", detailText: "scrollview autolayout Tets", identifier: "TestViewController", action: commonFn),
+        TableData(text: "BluetoothController", detailText: "bluetooth Server And Client", identifier: "BLEViewController", action: commonFn)
     ]
     override func viewDidLoad() {
         self.title = "IOS Prototyping Lab"
