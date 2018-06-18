@@ -14,34 +14,48 @@ class TestViewController: UIViewController {
     @IBOutlet weak var v: UIView!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    var list:[String] = ["우아아","ㅁㅁㅁ", "ㅂㅈㄷㄱ"]
+
     @IBAction func click(_ sender: Any) {
-        let dummyView = UIView()
-        dummyView.backgroundColor = UIColor.randomColor()
-        dummyView.translatesAutoresizingMaskIntoConstraints = false
-        let s = UISwitch()
-        dummyView.addSubview(s)
-        v.addSubview(dummyView)
-        let bottomAnchor = v.subviews.count == 1 ? v.topAnchor : v.subviews[v.subviews.count - 2].bottomAnchor
-        NSLayoutConstraint.activate([
-            dummyView.topAnchor.constraint(equalTo: bottomAnchor , constant: v.subviews.count == 1 ? 0 : 40),
-            dummyView.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 0),
-            dummyView.trailingAnchor.constraint(equalTo: v.trailingAnchor),
-            dummyView.heightAnchor.constraint(equalToConstant: 100)
-        ])
-        
-        print(v.intrinsicContentSize)
+        self.list.append(UUID().uuidString)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = .orange
     }
-    override func viewDidLayoutSubviews() {
-        DispatchQueue.main.async {
-            print("didLayoutSubviews", self.v.subviews.last)
-            if let lastView = self.v.subviews.last {
-                let h = lastView.frame.origin.y + lastView.frame.size.height
-                self.scrollView.contentSize = CGSize(width: self.v.frame.width, height: h)
-            }
+}
+extension TestViewController:UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = list[indexPath.row]
+        
+        return cell
+    }
+}
+
+
+
+class ResizableTableView:UITableView {
+    override var contentSize: CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
         }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return contentSize
     }
 }
