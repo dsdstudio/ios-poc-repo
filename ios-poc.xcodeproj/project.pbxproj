@@ -36,7 +36,8 @@
 		CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A120CF5778005374D3 /* PDFKitView.storyboard */; };
 		CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */; };
 		CE6317A620CF57C0005374D3 /* CGPDFPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */; };
-		CE6317A920CF85CB005374D3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6317A820CF85CB005374D3 /* TestViewController.swift */; };
+		CE6317A920CF85CB005374D3 /* AutolayoutScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */; };
+		CE9B1D6220D791820052381E /* AutolayoutScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */; };
 		CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +99,8 @@
 		CE6317A120CF5778005374D3 /* PDFKitView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitView.storyboard; sourceTree = "<group>"; };
 		CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitPageView.storyboard; sourceTree = "<group>"; };
 		CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CGPDFPageView.storyboard; sourceTree = "<group>"; };
-		CE6317A820CF85CB005374D3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutScrollViewController.swift; sourceTree = "<group>"; };
+		CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutolayoutScrollView.storyboard; sourceTree = "<group>"; };
 		CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
 		F7B9800A21508B54A5A098C0 /* Pods-ios-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-poc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 		CE63179920CE110D005374D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */,
 				0D830C7F20D52B1B0089F96D /* LassoView.storyboard */,
 				0D830C7D20D52B0D0089F96D /* BLE.storyboard */,
 				CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */,
@@ -242,7 +245,7 @@
 				0DDB34CA202D2D8600851A87 /* NestedScrollViewController.swift */,
 				0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */,
 				0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */,
-				CE6317A820CF85CB005374D3 /* TestViewController.swift */,
+				CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				0DDB34A4202D24E700851A87 /* LaunchScreen.storyboard in Resources */,
 				CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */,
 				CE6317A420CF579D005374D3 /* PDFKitPageView.storyboard in Resources */,
+				CE9B1D6220D791820052381E /* AutolayoutScrollView.storyboard in Resources */,
 				0D830C7E20D52B0D0089F96D /* BLE.storyboard in Resources */,
 				CE63179B20CE1135005374D3 /* DraggableCollectionView.storyboard in Resources */,
 				CE6317A020CF575B005374D3 /* NestedScrollView.storyboard in Resources */,
@@ -465,7 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6317A920CF85CB005374D3 /* TestViewController.swift in Sources */,
+				CE6317A920CF85CB005374D3 /* AutolayoutScrollViewController.swift in Sources */,
 				0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0D830C7C20D52AD50089F96D /* BLEViewController.swift in Sources */,

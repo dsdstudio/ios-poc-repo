@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestViewController: UIViewController {
+class AutolayoutScrollViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var v: UIView!
@@ -29,7 +29,7 @@ class TestViewController: UIViewController {
         self.tableView.backgroundColor = .orange
     }
 }
-extension TestViewController:UITableViewDelegate, UITableViewDataSource {
+extension AutolayoutScrollViewController:UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
