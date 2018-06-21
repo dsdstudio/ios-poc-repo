@@ -32,7 +32,7 @@ class PDFParser {
         switch type {
         case .text:
             let str = getString(scanner)
-            print("beginText \(str)")
+            print("beginText \(String(describing: str))")
             break
         case .newLineText:
             let str = getString(scanner)
@@ -40,7 +40,7 @@ class PDFParser {
         case .newLineSetSpacing:
             var r:CGPDFReal? = nil
             if CGPDFScannerPopNumber(scanner, &r!) {
-                print("newlinesetSpacing :: \(r)")
+                print("newlinesetSpacing :: \(String(describing: r))")
             }
         case .textAndSpaces:
             var arr:CGPDFArrayRef? = nil
@@ -51,7 +51,7 @@ class PDFParser {
                     if valueType == CGPDFObjectType.string {
                         var str:CGPDFStringRef? = nil
                         if CGPDFObjectGetValue(pdfObject, valueType, &str) {
-                            print("clippingText :: \(CGPDFStringCopyTextString(str!))")
+                            print("clippingText :: \(String(describing: CGPDFStringCopyTextString(str!)))")
                         }
                     } else {
                         // 공백문자 처리
@@ -106,7 +106,7 @@ class PDFParser {
                             print("subtype 있넹.. \(annotationSubType)")
                         }
                     }
-                    print("annotation 받음 ... \(annotations), \(annotationDictionary)")
+                    print("annotation 받음 ... \(annotations), \(String(describing: annotationDictionary))")
                 }
             }
         }
