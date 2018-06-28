@@ -6,6 +6,7 @@ target 'ios-poc' do
   use_frameworks!
 
   pod 'MaterialComponents'
+  pod 'RxGesture', '~> 1.2'
   # Pods for ios-poc
   target 'ios-pocTests' do
     inherit! :search_paths
