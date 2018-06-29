@@ -71,33 +71,6 @@
             </objects>
             <point key="canvasLocation" x="972" y="31.934032983508249"/>
         </scene>
-        <!--Material Index View Controller-->
-        <scene sceneID="lS3-s1-UM0">
-            <objects>
-                <viewController storyboardIdentifier="MaterialIndexViewController" id="tEJ-uE-lc8" customClass="MaterialIndexViewController" customModule="ios_poc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vua-LE-HLQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="우와앙" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-ic-Wja" customClass="MDCTextField">
-                                <rect key="frame" x="34" y="90" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="e7l-sh-wcv"/>
-                    </view>
-                    <connections>
-                        <outlet property="textField" destination="LkM-ic-Wja" id="xee-4Y-2cJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hXU-Kz-zgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="518" y="620"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uoa-gB-IFU">
             <objects>
@@ -170,7 +143,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="TestViewController" storyboardName="AutolayoutScrollView" referencedIdentifier="AutolayoutScrollViewController" id="4oS-Wq-jDx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcT-hg-PSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="-597"/>
+            <point key="canvasLocation" x="498" y="-597"/>
+        </scene>
+        <!--MaterialIndexViewController-->
+        <scene sceneID="c6F-jW-Mid">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MaterialIndexViewController" storyboardName="Material" referencedIdentifier="MaterialIndexViewController" id="HCX-Cm-wFW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSn-jX-KBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="-560"/>
         </scene>
     </scenes>
 </document>

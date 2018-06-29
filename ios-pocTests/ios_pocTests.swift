@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import ios_poc
 
 class ios_pocTests: XCTestCase {
     

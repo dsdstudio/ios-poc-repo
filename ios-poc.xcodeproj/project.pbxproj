@@ -33,6 +33,9 @@
 		B1C84015998B9BF3E470BCD5 /* Pods_ios_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E653D77AD1ABFD7D5EF4C2E /* Pods_ios_poc.framework */; };
 		CE070A7B20D8C29800FB31DB /* PDFBackedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE070A7A20D8C29800FB31DB /* PDFBackedViewController.swift */; };
 		CE070A7D20D8D22600FB31DB /* MaterialIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE070A7C20D8D22600FB31DB /* MaterialIndexViewController.swift */; };
+		CE1D46B220E2441200558EFC /* t0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE1D46B120E2441100558EFC /* t0.jpg */; };
+		CE4272AD20DCEF58003BC296 /* PoolingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4272AB20DCEF58003BC296 /* PoolingScrollViewController.swift */; };
+		CE4272B020DCF02A003BC296 /* Material.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4272AF20DCF02A003BC296 /* Material.storyboard */; };
 		CE63179B20CE1135005374D3 /* DraggableCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179A20CE1135005374D3 /* DraggableCollectionView.storyboard */; };
 		CE6317A020CF575B005374D3 /* NestedScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63179F20CF575B005374D3 /* NestedScrollView.storyboard */; };
 		CE6317A220CF5778005374D3 /* PDFKitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6317A120CF5778005374D3 /* PDFKitView.storyboard */; };
@@ -98,12 +101,16 @@
 		BDDC968E10C16422D4532490 /* Pods-ios-pocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-pocTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-pocTests/Pods-ios-pocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE070A7A20D8C29800FB31DB /* PDFBackedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PDFBackedViewController.swift; path = ../../../../Documents/testapp/testapp/PDFBackedViewController.swift; sourceTree = "<group>"; };
 		CE070A7C20D8D22600FB31DB /* MaterialIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialIndexViewController.swift; sourceTree = "<group>"; };
+		CE1D46B120E2441100558EFC /* t0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = t0.jpg; path = ../../../Desktop/t0.jpg; sourceTree = "<group>"; };
+		CE4272AB20DCEF58003BC296 /* PoolingScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolingScrollViewController.swift; sourceTree = "<group>"; };
+		CE4272AF20DCF02A003BC296 /* Material.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Material.storyboard; sourceTree = "<group>"; };
 		CE63179A20CE1135005374D3 /* DraggableCollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DraggableCollectionView.storyboard; sourceTree = "<group>"; };
 		CE63179F20CF575B005374D3 /* NestedScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NestedScrollView.storyboard; sourceTree = "<group>"; };
 		CE6317A120CF5778005374D3 /* PDFKitView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitView.storyboard; sourceTree = "<group>"; };
 		CE6317A320CF579D005374D3 /* PDFKitPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PDFKitPageView.storyboard; sourceTree = "<group>"; };
 		CE6317A520CF57C0005374D3 /* CGPDFPageView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CGPDFPageView.storyboard; sourceTree = "<group>"; };
 		CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutScrollViewController.swift; sourceTree = "<group>"; };
+		CE7E3BA820E5D6A700BD4C09 /* ios-poc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-poc.entitlements"; sourceTree = "<group>"; };
 		CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutolayoutScrollView.storyboard; sourceTree = "<group>"; };
 		CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
 		F7B9800A21508B54A5A098C0 /* Pods-ios-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-poc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-poc/Pods-ios-poc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,12 +169,14 @@
 		0DDB3498202D24E700851A87 /* ios-poc */ = {
 			isa = PBXGroup;
 			children = (
+				CE7E3BA820E5D6A700BD4C09 /* ios-poc.entitlements */,
 				CE63179920CE110D005374D3 /* Storyboards */,
 				0DDB34CD202D30DD00851A87 /* Drawing */,
 				CED93F3420CA13DD00458EA7 /* views */,
 				CEE1661C20CA13800087CC40 /* controllers */,
 				0DDB35142030772F00851A87 /* MemesUtil.swift */,
 				0DDB3499202D24E700851A87 /* AppDelegate.swift */,
+				CE1D46B120E2441100558EFC /* t0.jpg */,
 				0DDB349D202D24E700851A87 /* Main.storyboard */,
 				0DDB34A2202D24E700851A87 /* LaunchScreen.storyboard */,
 				0DDB34A0202D24E700851A87 /* Assets.xcassets */,
@@ -218,6 +227,7 @@
 		CE63179920CE110D005374D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CE4272AF20DCF02A003BC296 /* Material.storyboard */,
 				CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */,
 				0D830C7F20D52B1B0089F96D /* LassoView.storyboard */,
 				0D830C7D20D52B0D0089F96D /* BLE.storyboard */,
@@ -252,6 +262,7 @@
 				0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */,
 				CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */,
 				CE070A7C20D8D22600FB31DB /* MaterialIndexViewController.swift */,
+				CE4272AB20DCEF58003BC296 /* PoolingScrollViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -343,6 +354,14 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Multipath = {
+								enabled = 0;
+							};
+						};
 					};
 					0DDB34A9202D24E700851A87 = {
 						CreatedOnToolsVersion = 9.2;
@@ -389,10 +408,12 @@
 				CE9B1D6220D791820052381E /* AutolayoutScrollView.storyboard in Resources */,
 				0D830C7E20D52B0D0089F96D /* BLE.storyboard in Resources */,
 				CE63179B20CE1135005374D3 /* DraggableCollectionView.storyboard in Resources */,
+				CE4272B020DCF02A003BC296 /* Material.storyboard in Resources */,
 				CE6317A020CF575B005374D3 /* NestedScrollView.storyboard in Resources */,
 				CE6317A620CF57C0005374D3 /* CGPDFPageView.storyboard in Resources */,
 				0DDB34A1202D24E700851A87 /* Assets.xcassets in Resources */,
 				0D830C8020D52B1B0089F96D /* LassoView.storyboard in Resources */,
+				CE1D46B220E2441200558EFC /* t0.jpg in Resources */,
 				0D3F284A203599F8000162C0 /* sample_pdf.pdf in Resources */,
 				0DDB349F202D24E700851A87 /* Main.storyboard in Resources */,
 			);
@@ -428,6 +449,9 @@
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -437,6 +461,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,6 +533,7 @@
 			files = (
 				CE6317A920CF85CB005374D3 /* AutolayoutScrollViewController.swift in Sources */,
 				0D3F284C20359A56000162C0 /* CGPDFPageViewController.swift in Sources */,
+				CE4272AD20DCEF58003BC296 /* PoolingScrollViewController.swift in Sources */,
 				0DDB34CC202D2D8600851A87 /* NestedScrollViewController.swift in Sources */,
 				0D830C7C20D52AD50089F96D /* BLEViewController.swift in Sources */,
 				CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */,

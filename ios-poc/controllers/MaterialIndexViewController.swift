@@ -9,52 +9,46 @@
 import UIKit
 import MaterialComponents
 import MaterialComponents.MaterialMaskedTransition
-
+import RxGesture
+import RxSwift
 class MaterialIndexViewController: UIViewController {
-
-    @IBOutlet weak var textField: MDCTextField!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        textField.placeholder = "Full Name"
-
-        let c = MDCTextInputControllerOutlined(textInput: textField)
-        c.helperText = "Name"
-        
+    let b = { () -> MDCRaisedButton in
         let b = MDCRaisedButton()
         b.frame = CGRect(x: 22, y: 200, width: 100, height: 48)
         b.backgroundColor = .clear
         b.setTitle("눌러봐", for: UIControl.State.normal)
         b.setTitleColor(.orange, for: UIControl.State.normal)
-        b.addTarget(self, action: #selector(click), for: UIControl.Event.touchUpInside)
+        return b
+    }()
+    let bag = DisposeBag()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        b.rx.tapGesture().subscribe(onNext: { [unowned self] g in
+            let vc = PopupVC()
+            vc.modalPresentationStyle = .custom
+            vc.view.backgroundColor = .orange
+            vc.transitioningDelegate = self
+            
+            self.present(vc, animated: true) {
+            }
+        }).disposed(by: bag)
         view.addSubview(b)
         self.transitioningDelegate = self
-    }
-    @objc func click(_ b:MDCButton) {
-   
-        let transitionDelegate = MDCMaskedTransitionController(sourceView: b)
-        let vc = PopupVC()
-        vc.view.backgroundColor = .orange
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = transitionDelegate
-        
-        present(vc, animated: true) {
-        }
     }
 }
 
 class PopupVC:UIViewController {
     let button = { () -> UIButton in
-        let b = UIButton(type: UIButton.ButtonType.roundedRect)
-        b.frame = CGRect(x: 44, y: 44, width: 100, height: 40)
-//        b.tintColor = .blue
+        let b = MDCRaisedButton()
+        b.frame = CGRect(x: 44, y: 44, width: 100, height: 48)
         b.setTitle("Close", for: UIControl.State.normal)
+        b.setTitleColor(.white, for: UIControl.State.normal)
         return b
     }()
     override func viewDidLoad() {
-        
         button.addTarget(self, action: #selector(close), for: UIControl.Event.touchUpInside)
         self.view.addSubview(button)
         print("popupVc DidLoad", self.view.frame)
@@ -64,7 +58,6 @@ class PopupVC:UIViewController {
             
         }
     }
-
 }
 
 extension MaterialIndexViewController:UIViewControllerTransitioningDelegate {
@@ -85,7 +78,7 @@ class MaskDismissAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         let animationDuration = transitionDuration(using: transitionContext)
         
-        containerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.001)
+        containerView.backgroundColor = UIColor(white: 1, alpha: 0.95)
         
         UIView.animate(withDuration: animationDuration, animations: {
             fromViewController.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -102,7 +95,6 @@ class MaskPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toViewController = transitionContext.viewController(forKey: .to)!
         let containerView = transitionContext.containerView
-        
         let animationDuration = transitionDuration(using: transitionContext)
         
         toViewController.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -110,7 +102,8 @@ class MaskPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toViewController.view)
         
         UIView.animate(withDuration: animationDuration, animations: {
-            toViewController.view.transform = CGAffineTransform.identity
+            toViewController.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            toViewController.view.layer.cornerRadius = 15.0
         }, completion: { finished in
             transitionContext.completeTransition(finished)
         })
