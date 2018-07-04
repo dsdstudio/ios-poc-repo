@@ -16,6 +16,7 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Child0") {
+            vc.view.frame = self.containerView.bounds
             self.addChildViewController(vc)
             containerView.addSubview(vc.view)
             self.currentVc = vc
@@ -35,6 +36,7 @@ class ContainerViewController: UIViewController {
         oldVc.willMove(toParentViewController: nil)
         
         self.addChildViewController(newVc)
+        newVc.view.frame = self.containerView.bounds
         self.containerView.addSubview(newVc.view)
 
         oldVc.view.removeFromSuperview()
