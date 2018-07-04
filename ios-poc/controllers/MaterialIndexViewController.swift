@@ -26,7 +26,7 @@ class MaterialIndexViewController: UIViewController {
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        b.rx.tapGesture().subscribe(onNext: { [unowned self] g in
+        b.rx.tapGesture().when(UIGestureRecognizer.State.recognized).subscribe(onNext: { [unowned self] g in
             let vc = PopupVC()
             vc.modalPresentationStyle = .custom
             vc.view.backgroundColor = .orange

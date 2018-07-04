@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.2)
   - MaterialComponents (55.3.0):
     - MaterialComponents/ActivityIndicator (= 55.3.0)
     - "MaterialComponents/ActivityIndicator+ColorThemer (= 55.3.0)"
@@ -443,11 +444,13 @@ PODS:
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - MaterialComponents
   - RxGesture (~> 1.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -459,6 +462,7 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   MaterialComponents: 915f4e844400a35db3ea4c710a9af40aa8bcb093
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
@@ -469,6 +473,6 @@ SPEC CHECKSUMS:
   RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: f020af7abb1153e3d448916ad32f2b16d76a97cf
+PODFILE CHECKSUM: 4369a9e78548f1ee81abfba6b46f5eb940c615b8
 
 COCOAPODS: 1.5.3

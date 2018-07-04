@@ -25,14 +25,13 @@ class ViewController: UIViewController {
     }
     let menu:[TableData] = [
         TableData(text: "NestedScrollViewController", detailText: "중첩된 스크롤뷰", identifier: "NestedScrollViewController", action: commonFn),
-//        TableData(text: "CanvasViewController", detailText: "Drawing", identifier: "CanvasViewController", action: commonFn),
-//        TableData(text: "CGPDFPageViewController", detailText: "old cgpdfPage Based view controller", identifier: "CGPDFPageViewController", action: commonFn),
         TableData(text: "PDFKitBasedPageViewController", detailText: "pdfkit Based view controller", identifier: "PDFKitBasedPageViewController", action: commonFn),
         TableData(text: "LassoViewController", detailText: "Lasso Prototyping", identifier: "LassoViewController", action: commonFn),
         TableData(text: "DraggableCollectionViewController", detailText: "collectionview dragndrop", identifier: "DraggableCollectionViewController", action: commonFn),
         TableData(text: "TestViewController", detailText: "scrollview autolayout Tets", identifier: "TestViewController", action: commonFn),
         TableData(text: "BluetoothController", detailText: "bluetooth Server And Client", identifier: "BLEViewController", action: commonFn),
-        TableData(text: "MaterialIndexViewController", detailText: "MaterialDesign index", identifier: "MaterialIndexViewController", action: commonFn)
+        TableData(text: "MaterialIndexViewController", detailText: "MaterialDesign index", identifier: "MaterialIndexViewController", action: commonFn),
+        TableData(text: "PoolingScrollViewController", detailText: "PoolingScrollView", identifier: "PoolingScrollViewController", action: commonFn)
     ]
     override func viewDidLoad() {
         self.title = "IOS Prototyping Lab"

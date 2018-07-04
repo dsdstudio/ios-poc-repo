@@ -7,6 +7,8 @@ target 'ios-poc' do
 
   pod 'MaterialComponents'
   pod 'RxGesture', '~> 1.2'
+  pod 'Alamofire', '~> 4.7'
+
   # Pods for ios-poc
   target 'ios-pocTests' do
     inherit! :search_paths

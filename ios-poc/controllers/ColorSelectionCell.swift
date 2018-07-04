@@ -30,6 +30,6 @@ class ColorSelectionCell: UICollectionViewCell {
             kCTForegroundColorAttributeName: UIColor.red
         ]
         
-        s.draw(in: CGRect(origin: CGPoint(x: rect.origin.x, y: rect.origin.y + (rect.size.height - font.lineHeight) * 0.5), size: rect.size), withAttributes: attr as [NSAttributedString.Key : Any])
+        s.draw(in: CGRect(origin: CGPoint(x: rect.origin.x, y: rect.origin.y + (rect.size.height - font.lineHeight) * 0.5), size: rect.size), withAttributes: attr as [NSAttributedStringKey : Any])
     }
 }

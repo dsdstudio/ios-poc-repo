@@ -29,11 +29,11 @@ class CGPDFPageViewController: UIViewController  {
             let firstController = self.viewController(at: 0)!
             let controllers = [firstController]
             pageController?.setViewControllers(controllers, direction: .forward, animated: false, completion: nil)
-            self.addChild(self.pageController!)
+            self.addChildViewController(self.pageController!)
             self.view.addSubview((pageController?.view)!)
             
             self.pageController?.view.frame = self.view.bounds
-            pageController?.didMove(toParent: self)
+            pageController?.didMove(toParentViewController: self)
         }
     }
     
