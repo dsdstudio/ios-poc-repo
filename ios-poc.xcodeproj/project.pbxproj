@@ -44,6 +44,7 @@
 		CE7E3BAA20E5FFB600BD4C09 /* PoolingScrollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7E3BA920E5FFB600BD4C09 /* PoolingScrollViewController.storyboard */; };
 		CE9B1D6220D791820052381E /* AutolayoutScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */; };
 		CED93F3620CA140500458EA7 /* PDFKitBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */; };
+		CEFC174220EC5EC700306FB8 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC174120EC5EC700306FB8 /* ContainerViewController.swift */; };
 		CF799E39D38C1970AC507E37 /* Pods_ios_pocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7FEE09FCE7500605AEC38D /* Pods_ios_pocUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		CE7E3BA920E5FFB600BD4C09 /* PoolingScrollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PoolingScrollViewController.storyboard; sourceTree = "<group>"; };
 		CE9B1D6120D791820052381E /* AutolayoutScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutolayoutScrollView.storyboard; sourceTree = "<group>"; };
 		CED93F3520CA140500458EA7 /* PDFKitBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitBasedViewController.swift; sourceTree = "<group>"; };
+		CEFC174120EC5EC700306FB8 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		DD372DA23047D00A413BF583 /* Pods-ios-pocTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-pocTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-pocTests/Pods-ios-pocTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3EF27F1B6F743126B7E5146 /* Pods_ios_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 				CE6317A820CF85CB005374D3 /* AutolayoutScrollViewController.swift */,
 				CE070A7C20D8D22600FB31DB /* MaterialIndexViewController.swift */,
 				CE4272AB20DCEF58003BC296 /* PoolingScrollViewController.swift */,
+				CEFC174120EC5EC700306FB8 /* ContainerViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				CE070A7D20D8D22600FB31DB /* MaterialIndexViewController.swift in Sources */,
 				0D069A202048DA2000E1C8CE /* Extensions.swift in Sources */,
 				0D3F285720399A29000162C0 /* MemesPdfView.swift in Sources */,
+				CEFC174220EC5EC700306FB8 /* ContainerViewController.swift in Sources */,
 				0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
 				0DBFD367205F4D0E009EF037 /* DraggableCollectionViewController.swift in Sources */,
