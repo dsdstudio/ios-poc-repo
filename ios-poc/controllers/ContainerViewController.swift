@@ -63,7 +63,19 @@ class ChildA:UIViewController {
 }
 
 class ChildB:UIViewController {
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         print("childB didload")
+    }
+    @IBAction func click(_ sender: UIButton) {
+        guard !indicator.isAnimating  else {
+            return
+        }
+        sender.isEnabled = false
+        indicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.indicator.stopAnimating()
+            sender.isEnabled = true
+        }
     }
 }
