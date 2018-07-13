@@ -15,39 +15,41 @@ class MaterialIndexViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    let b = { () -> MDCRaisedButton in
-        let b = MDCRaisedButton()
-        b.frame = CGRect(x: 22, y: 200, width: 100, height: 48)
-        b.backgroundColor = .clear
-        b.setTitle("눌러봐", for: UIControl.State.normal)
-        b.setTitleColor(.orange, for: UIControl.State.normal)
-        return b
-    }()
+    let b:MDCRaisedButton = {
+        $0.frame = CGRect(x: 22, y: 200, width: 100, height: 48)
+        $0.backgroundColor = .clear
+        $0.setTitle("눌러봐", for: .normal)
+        $0.setTitleColor(.orange, for: UIControl.State.normal)
+        return $0
+    }(MDCRaisedButton())
     let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        b.rx.tapGesture().when(UIGestureRecognizer.State.recognized).subscribe(onNext: { [unowned self] g in
-            let vc = PopupVC()
-            vc.modalPresentationStyle = .custom
-            vc.view.backgroundColor = .orange
-            vc.transitioningDelegate = self
-            
-            self.present(vc, animated: true) {
-            }
-        }).disposed(by: bag)
-        view.addSubview(b)
+        b.rx.tapGesture().when(UIGestureRecognizer.State.recognized).subscribe{ [unowned self] g in
+            let vc:PopupVC = {
+                $0.modalPresentationStyle = .custom
+                $0.view.backgroundColor = .orange
+                $0.transitioningDelegate = self
+                return $0
+            }(PopupVC())
+            self.present(vc, animated: true)
+        }
+        .disposed(by: bag)
+        
+        self.view.addSubview(b)
         self.transitioningDelegate = self
     }
 }
 
 class PopupVC:UIViewController {
-    let button = { () -> UIButton in
-        let b = MDCRaisedButton()
-        b.frame = CGRect(x: 44, y: 44, width: 100, height: 48)
-        b.setTitle("Close", for: UIControl.State.normal)
-        b.setTitleColor(.white, for: UIControl.State.normal)
-        return b
-    }()
+    let button:MDCRaisedButton = {
+        $0.frame = CGRect(x: 44, y: 44, width: 100, height: 48)
+        $0.setTitle("Close", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        return $0
+    }(MDCRaisedButton())
+    
     override func viewDidLoad() {
         button.addTarget(self, action: #selector(close), for: UIControl.Event.touchUpInside)
         self.view.addSubview(button)
