@@ -207,14 +207,6 @@
             </objects>
             <point key="canvasLocation" x="103" y="-560"/>
         </scene>
-        <!--PoolingScrollViewController-->
-        <scene sceneID="cfE-Uh-qdD">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PoolingScrollViewController" storyboardName="PoolingScrollViewController" referencedIdentifier="PoolingScrollViewController" id="o2r-6u-7fF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4vH-4a-iBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="480" y="-324"/>
-        </scene>
         <!--ChildA-->
         <scene sceneID="9eY-Jz-zhU">
             <objects>
@@ -245,6 +237,7 @@
                             <constraint firstAttribute="trailing" secondItem="AHu-Qp-XNI" secondAttribute="trailing" constant="34" id="qNq-Lx-VLd"/>
                             <constraint firstAttribute="bottom" secondItem="AHu-Qp-XNI" secondAttribute="bottom" constant="34" id="xto-Ka-zEu"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="bLU-oJ-MIQ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fG-HN-PFt" userLabel="First Responder" sceneMemberID="firstResponder"/>

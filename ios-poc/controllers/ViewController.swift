@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         TableData(text: "TestViewController", detailText: "scrollview autolayout Tets", identifier: "TestViewController", action: commonFn),
         TableData(text: "BluetoothController", detailText: "bluetooth Server And Client", identifier: "BLEViewController", action: commonFn),
         TableData(text: "MaterialIndexViewController", detailText: "MaterialDesign index", identifier: "MaterialIndexViewController", action: commonFn),
-        TableData(text: "PoolingScrollViewController", detailText: "PoolingScrollView", identifier: "PoolingScrollViewController", action: commonFn),
         TableData(text: "ContainerViewController", detailText: "container view sample", identifier: "ContainerViewController", action: commonFn)
     ]
     override func viewDidLoad() {
