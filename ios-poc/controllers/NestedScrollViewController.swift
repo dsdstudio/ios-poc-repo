@@ -61,5 +61,4 @@ extension NestedScrollViewController:UIScrollViewDelegate, UIGestureRecognizerDe
         let page = floor((scrollView.contentOffset.x - width / 2) / width) + 1
         currentPage = Int(page)
     }
-
 }

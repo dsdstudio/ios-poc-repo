@@ -15,6 +15,7 @@
 		0D830C7C20D52AD50089F96D /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D830C7B20D52AD50089F96D /* BLEViewController.swift */; };
 		0D830C7E20D52B0D0089F96D /* BLE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D830C7D20D52B0D0089F96D /* BLE.storyboard */; };
 		0D830C8020D52B1B0089F96D /* LassoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D830C7F20D52B1B0089F96D /* LassoView.storyboard */; };
+		0D8BB324213C2DC00078598A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB323213C2DC00078598A /* CustomScrollView.swift */; };
 		0DBFD367205F4D0E009EF037 /* DraggableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */; };
 		0DBFD36B205F4FBF009EF037 /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */; };
 		0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */; };
@@ -71,6 +72,7 @@
 		0D830C7B20D52AD50089F96D /* BLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
 		0D830C7D20D52B0D0089F96D /* BLE.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BLE.storyboard; sourceTree = "<group>"; };
 		0D830C7F20D52B1B0089F96D /* LassoView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LassoView.storyboard; sourceTree = "<group>"; };
+		0D8BB323213C2DC00078598A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		0DBFD366205F4D0E009EF037 /* DraggableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCollectionViewController.swift; sourceTree = "<group>"; };
 		0DBFD36A205F4FBF009EF037 /* ColorSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCell.swift; sourceTree = "<group>"; };
 		0DCC46AE203D5F8000E795B8 /* LassoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LassoViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				0DDB34C9202D2D8600851A87 /* ZoomableScrollView.swift */,
+				0D8BB323213C2DC00078598A /* CustomScrollView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				CEFC174220EC5EC700306FB8 /* ContainerViewController.swift in Sources */,
 				0DCC46AF203D5F8000E795B8 /* LassoViewController.swift in Sources */,
 				0DDB349A202D24E700851A87 /* AppDelegate.swift in Sources */,
+				0D8BB324213C2DC00078598A /* CustomScrollView.swift in Sources */,
 				0DBFD367205F4D0E009EF037 /* DraggableCollectionViewController.swift in Sources */,
 				0DDB35152030772F00851A87 /* MemesUtil.swift in Sources */,
 				0DBFD36B205F4FBF009EF037 /* ColorSelectionCell.swift in Sources */,
