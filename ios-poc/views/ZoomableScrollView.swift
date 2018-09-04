@@ -13,6 +13,7 @@ class ZoomableScrollView: UIScrollView, UIGestureRecognizerDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.pinchGestureRecognizer?.delegate = self
+        self.panGestureRecognizer.minimumNumberOfTouches = 2
     }
     
     required init?(coder aDecoder: NSCoder) {

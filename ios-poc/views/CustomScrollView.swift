@@ -13,6 +13,7 @@ class CustomScrollView: UIScrollView, UIGestureRecognizerDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.panGestureRecognizer.delegate = self
+        self.panGestureRecognizer.minimumNumberOfTouches = 2
     }
     
     required init?(coder aDecoder: NSCoder) {
